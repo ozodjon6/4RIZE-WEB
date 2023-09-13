@@ -1,0 +1,29 @@
+.grid__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -32px;
+    margin-right: -32px;
+    margin-bottom: -32px;
+}
+
+.grid__item {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc((100% - 4*32px)/4);
+    max-width: calc((100% - 4*32px)/4);
+    margin-right: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 1450px) {
+    .grid__item {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 calc((100% - 3*32px)/3);
+        max-width: calc((100% - 3*32px)/3);
+        margin-right: 32px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+}

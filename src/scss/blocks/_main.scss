@@ -1,0 +1,61 @@
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.main-page {
+    width: 100%;
+    background: var(--bg-secondary-colour);
+    display: block;
+    padding: 4rem;
+
+    @include respond(tabdesk) {
+      padding: 4rem 3.2rem;
+    }
+
+    @include respond(mobilemini) {
+      padding: 24px 0;
+    }
+}
+
+.section-heading {
+  margin-bottom: 4rem;
+
+  .title {
+    margin-bottom: 16px;
+  }
+
+  @include respond(mobilemini) {
+    margin-bottom: 24px;
+  }
+}
+
+.grid__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .btn {
+    display: none;
+    align-items: center;
+    height: 44px;
+
+    @include respond(tabdesk) {
+      display: flex;
+    }
+
+    @include respond(mobilemini) {
+      height: 36px;
+      line-height: 36px;
+    }
+
+    svg {
+      margin-right: 8px;
+    }
+  
+    .text-default {
+      color: var(--text-primary-inverted);
+    }
+
+  }
+}
