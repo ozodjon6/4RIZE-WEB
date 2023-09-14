@@ -27,3 +27,62 @@
 .sidebar__logo {
     display: block;
 }
+
+.sidebar-menu {
+    margin-top: 55px;
+}
+
+.filter__title {
+    color: var(--text-primary-colour);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.filter__list {
+    .filter__item {
+        margin-bottom: 12px;
+
+        .filter__checkbox-wrap {
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .filter__input[type=checkbox] {
+            display: none;
+        }
+
+        .filter__checkbox-wrap input:checked+.filter__mask::before {
+            opacity: 1;
+        }
+        .filter__checkbox-wrap input:checked+.filter__mask {
+            background-color: var(--brand-primary-colour);
+        }
+
+        .filter__mask {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            background-color: var(--bg-gray-sidebar-checkbox-colour);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-image: url(../assets/icons/check-icon.svg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                width: 12px;
+                height: 12px;
+                opacity: 0;
+            }
+        }
+    }
+}

@@ -21,7 +21,7 @@
   .top-menu__item:first-child {
     display: none;
 
-    @include respond(phone) {
+    @include respond(tabdesk) {
       display: block;
 
       .top-menu__link {

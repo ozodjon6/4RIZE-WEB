@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    
+
     // Class
 
     function createClassMenuCard() {
@@ -13,12 +13,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 this.rating = rating
                 this.parent = document.querySelector(parentSelector)
             }
-    
+
             render() {
                 const elemet = document.createElement('li');
                 elemet.className = 'grid__item locked'
-            
-    
+
+
                 elemet.innerHTML = `
     
                     <a href="" class="image-wrap">
@@ -46,7 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         <span class="text-default text-x-small">${this.rating}</span>
                     </div>
                 `
-    
+
                 this.parent.append(elemet);
             }
         }
@@ -175,18 +175,18 @@ window.addEventListener('DOMContentLoaded', () => {
     createClassMenuCard();
 
 
-function domElemet() {
-    
-    try {
-        const gridItem = document.getElementsByClassName('grid__item');
-        const firstElement = gridItem[0];
-        firstElement.classList.remove('locked')
-        firstElement.classList.add('unlocked')
-    } catch(e) {
-        console.log(e);
-    }
-}
+    function domElemet() {
 
-domElemet();
+        try {
+            const gridItem = document.getElementsByClassName('grid__item');
+            const firstElement = gridItem[0];
+            firstElement.classList.remove('locked')
+            firstElement.classList.add('unlocked')
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    domElemet();
 
 })

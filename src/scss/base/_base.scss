@@ -112,18 +112,9 @@ body {
   margin: 0 auto;
 }
 
-.container.full-container {
+.container.custom-container {
   width: 100%;
-  max-width: 1920px;
-  padding: 0 63px;
-
-  @include respond(tablet) {
-    padding: 0 32px;
-  }
-
-  @include respond(mobilemini) {
-    padding: 0 24px;
-  }
+  max-width: 1980px;
 }
 
 .icon {
