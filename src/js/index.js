@@ -176,6 +176,40 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 function domElemet() {
+
+    const filterBtn = document.getElementById('filterBtn');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+    const sidebarCloseBtn = document.querySelector('.sidebar__close');
+
+    filterBtn.addEventListener('click', () => {
+        sidebar.classList.add('open');
+        overlay.classList.add('open');
+
+        if(sidebar.classList.contains('open')) {
+            document.body.style.overflowX = 'hidden';
+            document.body.style.position = 'fixed';
+        } else {
+            document.body.style.overflowX = '';
+            document.body.style.position = '';
+        }
+    })
+
+    sidebarCloseBtn.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+
+        document.body.style.overflowX = '';
+        document.body.style.position = '';
+    })
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open')
+
+        document.body.style.overflowX = '';
+        document.body.style.position = '';
+    })
     
     try {
         const gridItem = document.getElementsByClassName('grid__item');
@@ -186,6 +220,40 @@ function domElemet() {
         console.log(e);
     }
 }
+
+function clickFilterMore() {
+
+    // Получаем все элементы с классом .changeTextButton
+    const changeTextButtons = document.querySelectorAll(".filter__more");
+
+    // Добавляем обработчик клика на каждую кнопку
+    changeTextButtons.forEach(function(button) {
+        button.addEventListener("click", toggleTextAndClass);
+    });
+
+    // Функция для изменения текста и добавления/удаления класса у соседнего div
+    function toggleTextAndClass(event) {
+        const button = event.currentTarget;
+        const textContainer = button.parentElement;
+        const myTextElement = textContainer.querySelector(".filter__more span");
+        const siblingDiv = textContainer.querySelector(".filter__more-item");
+        const filterMore = textContainer.querySelector('.filter__more');
+
+        // Если у текста нет класса "active", то добавляем его, иначе удаляем
+        if (!filterMore.classList.contains("active")) {
+            myTextElement.textContent = "Скрыть";
+            filterMore.classList.add("active");
+            siblingDiv.classList.add("open");
+        } else {
+            myTextElement.textContent = "Еще";
+            filterMore.classList.remove("active");
+            siblingDiv.classList.remove("open");
+        }
+    }
+    
+}
+
+clickFilterMore();
 
 domElemet();
 
