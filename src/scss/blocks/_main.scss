@@ -23,6 +23,18 @@
     }
 }
 
+.main-page.inside-page {
+  padding: 32px 0 120px;
+
+  @include respond(tabdesk) {
+    padding: 40px 0;
+  }
+
+  @include respond(mobilemini) {
+    padding: 32px 0;
+  }
+}
+
 .section-heading {
   margin-bottom: 4rem;
 

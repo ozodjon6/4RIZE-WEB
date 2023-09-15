@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Web app | Home Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/bootstrap-grid.min.css" />
   <link rel="stylesheet" href="./css/main.css" />
 </head>
@@ -35,35 +36,311 @@
 </div>
 </div>
           </header>
-          <main class="main-page">
-            <section class="section-heading">
-              <div class="container custom-container">
+          <main class="main-page inside-page">
+            <section class="inside-page__heading">
+              <div class="container">
                 <div class="row">
                   <div class="col-12">
+                    <a href="./index.html" class="inside-page__back d-flex a-center">
+                      <svg class="icon d-block" width="16" height="16">
+                        <use xlink:href="./assets/icons/sprite.svg#arrow-down"></use>
+                      </svg>
+                      <p class="text-default text-x-small">Назад</p>
+                    </a>
+                  </div>
+                  <div class="col-12 d-flex a-center j-beetween">
                     <h2 class="title">
-                      Добро пожаловать в иследовательскую базу финтех проектов
-                      СНГ и международных игроков
+                      Перевод денег с карты на карту Uzum
                     </h2>
-                    <span class="text-default text-medium">Мы работаем сделать базу большим, вы найдете
-                      аналитические данные для выхода на рынок или запуска
-                      проекта</span>
+                    <span class="company-logo">
+                      <svg class="icon d-block" width="108" height="43">
+                        <use xlink:href="./assets/icons/sprite.svg#uzum-bank"></use>
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
             </section>
-            <section class="section-grid">
-              <div class="container custom-container">
-                <div class="grid">
-                  <div class="grid__heading">
-                    <h4 class="title">Перевод денег</h4>
-                    <button class="btn large" id="filterBtn">
-                      <svg class="icon" width="16" height="16">
-                        <use xlink:href="./assets/icons/sprite.svg#hamburger-icon"></use>
-                      </svg>
-                      <span class="text-default bold">Фильтр</span>
-                    </button>
+            <section class="inside-page__content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 col-lg-8">
+                    <div class="content-body mb-64">
+                      <div style="padding:70.24% 0 0 0;position:relative;"><iframe
+                          src="https://player.vimeo.com/video/226636274?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius: 8px;"></iframe>
+                      </div>
+                    </div>
+                    <div class="slider mb-64">
+                      <div class="slider__heading">
+                        <h4 class="title">Скриншоты</h4>
+                      </div>
+                      <div class="slider__content">
+                        <div class="swiper">
+                          <!-- Additional required wrapper -->
+                          <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">Slide 1</div>
+                            <div class="swiper-slide">Slide 2</div>
+                            <div class="swiper-slide">Slide 3</div>
+                            ...
+                          </div>
+
+                          <!-- If we need navigation buttons -->
+                          <div class="swiper-button-prev"></div>
+                          <div class="swiper-button-next"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="options d-block d-lg-none">
+                      <ul class="options__list">
+                        <li class="options__item">
+                          <div class="options__item-wrap">
+                            <div class="info-list">
+                              <h5 class="title">Оценка</h5>
+                              <div class="info-list__item">
+                                <div class="info-list__body">
+                                  <span class="text-default text-small">Количество шагов до цели:</span>
+                                  <span class="text-default text-x-small d-flex a-center">
+                                    <strong class="info-list__number">12</strong>
+                                    <p class="info-list__text">
+                                      ( лучший результат у
+                                      <a href="" class="info-list__link">Click</a>
+                                      <strong>: 8 </strong>
+                                      )
+                                    </p>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="info-list__item">
+                                <div class="info-list__body">
+                                  <span class="text-default text-small">Количество шагов до цели:</span>
+                                  <span class="text-default text-x-small d-flex a-center">
+                                    <strong class="info-list__number">8 из 10</strong>
+                                    <p class="info-list__text">
+                                      ( лучший результат у
+                                      <a href="" class="info-list__link">Payme</a>
+                                      <strong>: 8 </strong>
+                                      )
+                                    </p>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="info-list__item">
+                                <div class="info-list__body">
+                                  <span class="text-default text-small">Количество шагов до цели:</span>
+                                  <span class="text-default text-x-small d-flex a-center">
+                                    <strong class="info-list__number">4 из 10</strong>
+                                    <p class="info-list__text">
+                                      ( лучший результат у
+                                      <a href="" class="info-list__link">Payme</a>
+                                      <strong>: 9 </strong>
+                                      )
+                                    </p>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="options__item-wrap">
+                            <div class="info-list">
+                              <h5 class="title">Особенности</h5>
+                              <div class="info-list__item">
+                                <ul class="info-list__content">
+                                  <li class="info-list__content-item text-default text-small">Сканирование карты</li>
+                                  <li class="info-list__content-item text-default text-small">Выбор всей суммы доступный
+                                    на балансе карты</li>
+                                  <li class="info-list__content-item text-default text-small">Оставить комментарий к
+                                    платежу</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="options__item">
+                          <div class="options__item-wrap">
+                            <div class="info-list">
+                              <h5 class="title">Информация</h5>
+                              <div class="info-list__item">
+                                <span class="text-default text-small d-block">Приложение:</span>
+                                <strong class="text-default text-small bold">Uzum</strong>
+                              </div>
+                              <div class="info-list__item">
+                                <span class="text-default text-small d-block">Платформа::</span>
+                                <strong class="text-default text-small bold">iOS (16)</strong>
+                              </div>
+                              <div class="info-list__item">
+                                <span class="text-default text-small d-block">Версия приложение::</span>
+                                <strong class="text-default text-small bold">10.5.6</strong>
+                              </div>
+                              <div class="info-list__item">
+                                <span class="text-default text-small d-block">Дата создание отчета::</span>
+                                <strong class="text-default text-small bold">13 июня 2023 г.</strong>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="card-image mb-64">
+                      <div class="card-image__heading">
+                        <h4 class="title">Карта пути - Перевод денег с карты на карту Uzum</h4>
+                      </div>
+                      <div class="card-image__img">
+                        <img src="./assets/image/insade-page-1.png" alt="">
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product__heading">
+                        <h4 class="title">Другие похожие продукты</h4>
+                      </div>
+                      <ul class="product__list d-flex a-center">
+                        <li class="product__item">
+                          <a href="./inside-page.html" class="image-wrap">
+                            <img src="./assets/image/image-1.png" srcset="./assets/image/image-1@2x.png"
+                              alt="Uzum card image">
+                          </a>
+                          <strong class="grid__item-title text-default text-x-small d-block">Uzum</strong>
+                          <span class="grid__item-descr text-default text-small bold">Перевод денег с карты на карту
+                            Uzum</span>
+                          <div class="grid__item-rating d-flex a-center">
+                            <svg width="16" height="22" viewBox="0 0 16 22" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M5.47348 6.82454C5.47348 6.82454 2.44621 7.15408 0.426743 7.37441C0.244723 7.39606 0.0837795 7.51564 0.0234256 7.69736C-0.0369284 7.87908 0.0234255 8.06834 0.157545 8.18791C1.65777 9.5334 3.91194 11.5483 3.91194 11.5483C3.91003 11.5483 3.29308 14.4794 2.88305 16.435C2.84856 16.612 2.91371 16.7994 3.07082 16.9114C3.22697 17.0235 3.42815 17.0254 3.58622 16.9378C5.35277 15.9511 7.99877 14.4672 7.99877 14.4672C7.99877 14.4672 10.6457 15.9511 12.4094 16.9387C12.5703 17.0254 12.7715 17.0235 12.9277 16.9114C13.0848 16.7994 13.1499 16.612 13.1145 16.436C12.7045 14.4794 12.0885 11.5483 12.0885 11.5483C12.0885 11.5483 14.3426 9.5334 15.8429 8.19074C15.977 8.0674 16.0364 7.87814 15.977 7.69736C15.9176 7.51658 15.7566 7.39701 15.5746 7.37629C13.5552 7.15409 10.5269 6.82454 10.5269 6.82454C10.5269 6.82454 9.27195 4.09591 8.43562 2.27682C8.35706 2.11393 8.19228 2 7.99877 2C7.80525 2 7.63952 2.11487 7.56479 2.27682C6.7275 4.09591 5.47348 6.82454 5.47348 6.82454Z"
+                                fill="url(#paint0_linear_537_1506)"></path>
+                              <defs>
+                                <linearGradient id="paint0_linear_537_1506" x1="8" y1="2" x2="8" y2="17"
+                                  gradientUnits="userSpaceOnUse">
+                                  <stop stop-color="#FFBD80"></stop>
+                                  <stop offset="1" stop-color="#FF820E"></stop>
+                                </linearGradient>
+                              </defs>
+                            </svg>
+                            <span class="text-default text-x-small">8.5</span>
+                          </div>
+                        </li>
+                        <li class="product__item">
+                          <a href="./inside-page.html" class="image-wrap">
+                            <img src="./assets/image/image-1.png" srcset="./assets/image/image-1@2x.png"
+                              alt="Uzum card image">
+                          </a>
+                          <strong class="grid__item-title text-default text-x-small d-block">Uzum</strong>
+                          <span class="grid__item-descr text-default text-small bold">Перевод денег с карты на карту
+                            Uzum</span>
+                          <div class="grid__item-rating d-flex a-center">
+                            <svg width="16" height="22" viewBox="0 0 16 22" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M5.47348 6.82454C5.47348 6.82454 2.44621 7.15408 0.426743 7.37441C0.244723 7.39606 0.0837795 7.51564 0.0234256 7.69736C-0.0369284 7.87908 0.0234255 8.06834 0.157545 8.18791C1.65777 9.5334 3.91194 11.5483 3.91194 11.5483C3.91003 11.5483 3.29308 14.4794 2.88305 16.435C2.84856 16.612 2.91371 16.7994 3.07082 16.9114C3.22697 17.0235 3.42815 17.0254 3.58622 16.9378C5.35277 15.9511 7.99877 14.4672 7.99877 14.4672C7.99877 14.4672 10.6457 15.9511 12.4094 16.9387C12.5703 17.0254 12.7715 17.0235 12.9277 16.9114C13.0848 16.7994 13.1499 16.612 13.1145 16.436C12.7045 14.4794 12.0885 11.5483 12.0885 11.5483C12.0885 11.5483 14.3426 9.5334 15.8429 8.19074C15.977 8.0674 16.0364 7.87814 15.977 7.69736C15.9176 7.51658 15.7566 7.39701 15.5746 7.37629C13.5552 7.15409 10.5269 6.82454 10.5269 6.82454C10.5269 6.82454 9.27195 4.09591 8.43562 2.27682C8.35706 2.11393 8.19228 2 7.99877 2C7.80525 2 7.63952 2.11487 7.56479 2.27682C6.7275 4.09591 5.47348 6.82454 5.47348 6.82454Z"
+                                fill="url(#paint0_linear_537_1506)"></path>
+                              <defs>
+                                <linearGradient id="paint0_linear_537_1506" x1="8" y1="2" x2="8" y2="17"
+                                  gradientUnits="userSpaceOnUse">
+                                  <stop stop-color="#FFBD80"></stop>
+                                  <stop offset="1" stop-color="#FF820E"></stop>
+                                </linearGradient>
+                              </defs>
+                            </svg>
+                            <span class="text-default text-x-small">8.5</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <ul class="grid__list"></ul>
+                  <div class="col-12 col-lg-4 d-none d-lg-block">
+                    <div class="options">
+                      <ul class="options__list">
+                        <li class="options__item">
+                          <div class="options__item-wrap">
+                            <div class="info-list">
+                              <h5 class="title">Оценка</h5>
+                              <div class="info-list__item">
+                                <div class="info-list__body">
+                                  <span class="text-default text-small">Количество шагов до цели:</span>
+                                  <span class="text-default text-x-small d-flex a-center">
+                                    <strong class="info-list__number">12</strong>
+                                    <p class="info-list__text">
+                                      ( лучший результат у
+                                      <a href="" class="info-list__link">Click</a>
+                                      <strong>: 8 </strong>
+                                      )
+                                    </p>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="info-list__item">
+                                <div class="info-list__body">
+                                  <span class="text-default text-small">Количество шагов до цели:</span>
+                                  <span class="text-default text-x-small d-flex a-center">
+                                    <strong class="info-list__number">8 из 10</strong>
+                                    <p class="info-list__text">
+                                      ( лучший результат у
+                                      <a href="" class="info-list__link">Payme</a>
+                                      <strong>: 8 </strong>
+                                      )
+                                    </p>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="info-list__item">
+                                <div class="info-list__body">
+                                  <span class="text-default text-small">Количество шагов до цели:</span>
+                                  <span class="text-default text-x-small d-flex a-center">
+                                    <strong class="info-list__number">4 из 10</strong>
+                                    <p class="info-list__text">
+                                      ( лучший результат у
+                                      <a href="" class="info-list__link">Payme</a>
+                                      <strong>: 9 </strong>
+                                      )
+                                    </p>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="options__item-wrap">
+                            <div class="info-list">
+                              <h5 class="title">Особенности</h5>
+                              <div class="info-list__item">
+                                <ul class="info-list__content">
+                                  <li class="info-list__content-item text-default text-small">Сканирование карты</li>
+                                  <li class="info-list__content-item text-default text-small">Выбор всей суммы доступный
+                                    на балансе карты</li>
+                                  <li class="info-list__content-item text-default text-small">Оставить комментарий к
+                                    платежу</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="options__item">
+                          <div class="options__item-wrap">
+                            <div class="info-list">
+                              <h5 class="title">Информация</h5>
+                              <div class="info-list__item">
+                                <span class="text-default text-small d-block">Приложение:</span>
+                                <strong class="text-default text-small bold">Uzum</strong>
+                              </div>
+                              <div class="info-list__item">
+                                <span class="text-default text-small d-block">Платформа::</span>
+                                <strong class="text-default text-small bold">iOS (16)</strong>
+                              </div>
+                              <div class="info-list__item">
+                                <span class="text-default text-small d-block">Версия приложение::</span>
+                                <strong class="text-default text-small bold">10.5.6</strong>
+                              </div>
+                              <div class="info-list__item">
+                                <span class="text-default text-small d-block">Дата создание отчета::</span>
+                                <strong class="text-default text-small bold">13 июня 2023 г.</strong>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -71,8 +348,8 @@
         </div>
       </div>
       <footer class="footer">
-				<div class="container">
-					<footer class="footer__row">
+        <div class="container">
+          <footer class="footer__row">
 	<ul class="footer__list">
 		<li class="footer__item">
 			<svg class="icon" width="68" height="24">
@@ -90,11 +367,14 @@
 	<a href="mailto:info@4rize.com" class="footer__link">info@4rize.com</a>
 </footer>
 
-				</div>
-			  </footer>
+        </div>
+      </footer>
     </div>
     <div class="overlay"></div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script src="./js/index.js"></script>
 </body>
 

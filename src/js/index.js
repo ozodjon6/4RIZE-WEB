@@ -1,26 +1,26 @@
-window.addEventListener('DOMContentLoaded', () => {
-
-function createClassMenuCard() {
-
+window.addEventListener("DOMContentLoaded", () => {
+  
+  function createClassMenuCard() {
     // Class
-    
+
     class MenuCard {
-        constructor(src, srcset, alt, title, descr, rating, parentSelector) {
-            this.src = src
-            this.srcset = srcset
-            this.alt = alt
-            this.title = title
-            this.descr = descr
-            this.rating = rating
-            this.parent = document.querySelector(parentSelector)
-        }
+      constructor(src, srcset, alt, title, descr, rating, parentSelector) {
+        this.src = src;
+        this.srcset = srcset;
+        this.alt = alt;
+        this.title = title;
+        this.descr = descr;
+        this.rating = rating;
+        this.parent = document.querySelector(parentSelector);
+      }
 
-        render() {
-            const elemet = document.createElement('li');
-            elemet.className = 'grid__item locked'
-        
+      render() {
+        const elemet = document.createElement("li");
+        elemet.className = "grid__item locked";
 
-            elemet.innerHTML = `
+        if (elemet) {
+
+          elemet.innerHTML = `
 
                 <a href="" class="image-wrap">
                     <img src="${this.src}" srcset="${this.srcset}" alt="${this.alt}" />
@@ -46,219 +46,247 @@ function createClassMenuCard() {
                     </svg>
                     <span class="text-default text-x-small">${this.rating}</span>
                 </div>
-            `
+            `;
 
-            this.parent.append(elemet);
         }
+
+        if (this.parent) {
+          this.parent.append(elemet);
+        } 
+      }
     }
 
     new MenuCard(
-        './assets/image/image-1.png',
-        './assets/image/image-1@2x.png',
-        'Uzum card image',
-        'Uzum',
-        'Перевод денег с карты на карту Uzum',
-        '8.5',
-        '.grid .grid__list'
+      "./assets/image/image-1.png",
+      "./assets/image/image-1@2x.png",
+      "Uzum card image",
+      "Uzum",
+      "Перевод денег с карты на карту Uzum",
+      "8.5",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-2.png',
-        './assets/image/image-2@2x.png',
-        'Payme card image',
-        'Payme',
-        'Перевод денег с карты на карту Payme',
-        '8.2',
-        '.grid .grid__list'
+      "./assets/image/image-2.png",
+      "./assets/image/image-2@2x.png",
+      "Payme card image",
+      "Payme",
+      "Перевод денег с карты на карту Payme",
+      "8.2",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-3.png',
-        './assets/image/image-3@2x.png',
-        'Click bank card image',
-        'Click',
-        'Перевод денег с карты на карту Click',
-        '7.6',
-        '.grid .grid__list'
+      "./assets/image/image-3.png",
+      "./assets/image/image-3@2x.png",
+      "Click bank card image",
+      "Click",
+      "Перевод денег с карты на карту Click",
+      "7.6",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-4.png',
-        './assets/image/image-4@2x.png',
-        'Anor Bank bank card image',
-        'Anor Bank',
-        'Перевод денег с карты на карту Anor Bank',
-        '7.6',
-        '.grid .grid__list'
+      "./assets/image/image-4.png",
+      "./assets/image/image-4@2x.png",
+      "Anor Bank bank card image",
+      "Anor Bank",
+      "Перевод денег с карты на карту Anor Bank",
+      "7.6",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-5.png',
-        './assets/image/image-5@2x.png',
-        'Ipak Yoli bank card image',
-        'Ipak Yoli',
-        'Перевод денег с карты на карту Ipak Yoli',
-        '7.6',
-        '.grid .grid__list'
+      "./assets/image/image-5.png",
+      "./assets/image/image-5@2x.png",
+      "Ipak Yoli bank card image",
+      "Ipak Yoli",
+      "Перевод денег с карты на карту Ipak Yoli",
+      "7.6",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-6.png',
-        './assets/image/image-6@2x.png',
-        'Humans bank card image',
-        'Humans',
-        'Перевод денег с карты на карту Humans',
-        '7.6',
-        '.grid .grid__list'
+      "./assets/image/image-6.png",
+      "./assets/image/image-6@2x.png",
+      "Humans bank card image",
+      "Humans",
+      "Перевод денег с карты на карту Humans",
+      "7.6",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-7.png',
-        './assets/image/image-7@2x.png',
-        'OFB bank card image',
-        'OFB',
-        'Перевод денег с карты на карту OFB',
-        '7.6',
-        '.grid .grid__list'
+      "./assets/image/image-7.png",
+      "./assets/image/image-7@2x.png",
+      "OFB bank card image",
+      "OFB",
+      "Перевод денег с карты на карту OFB",
+      "7.6",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-8.png',
-        './assets/image/image-8@2x.png',
-        'TBC bank card image',
-        'TBC',
-        'Перевод денег с карты на карту TBC',
-        '7.6',
-        '.grid .grid__list'
+      "./assets/image/image-8.png",
+      "./assets/image/image-8@2x.png",
+      "TBC bank card image",
+      "TBC",
+      "Перевод денег с карты на карту TBC",
+      "7.6",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-9.png',
-        './assets/image/image-9@2x.png',
-        'Paynet bank card image',
-        'Paynet',
-        'Перевод денег с карты на карту Paynet',
-        '7.6',
-        '.grid .grid__list'
+      "./assets/image/image-9.png",
+      "./assets/image/image-9@2x.png",
+      "Paynet bank card image",
+      "Paynet",
+      "Перевод денег с карты на карту Paynet",
+      "7.6",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-10.png',
-        './assets/image/image-10@2x.png',
-        'Zoomrad bank card image',
-        'Zoomrad',
-        'Перевод денег с карты на карту Zoomrad',
-        '7.6',
-        '.grid .grid__list'
+      "./assets/image/image-10.png",
+      "./assets/image/image-10@2x.png",
+      "Zoomrad bank card image",
+      "Zoomrad",
+      "Перевод денег с карты на карту Zoomrad",
+      "7.6",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-11.png',
-        './assets/image/image-11@2x.png',
-        'Tenge Bank bank card image',
-        'Tenge Bank',
-        'Перевод денег с карты на карту Tenge Bank',
-        '7.6',
-        '.grid .grid__list'
+      "./assets/image/image-11.png",
+      "./assets/image/image-11@2x.png",
+      "Tenge Bank bank card image",
+      "Tenge Bank",
+      "Перевод денег с карты на карту Tenge Bank",
+      "7.6",
+      ".grid .grid__list"
     ).render();
 
     new MenuCard(
-        './assets/image/image-12.png',
-        './assets/image/image-12@2x.png',
-        'Agro Bank bank card image',
-        'Agro Bank',
-        'Перевод денег с карты на карту Agro Bank',
-        '7.6',
-        '.grid .grid__list'
+      "./assets/image/image-12.png",
+      "./assets/image/image-12@2x.png",
+      "Agro Bank bank card image",
+      "Agro Bank",
+      "Перевод денег с карты на карту Agro Bank",
+      "7.6",
+      ".grid .grid__list"
     ).render();
-}
+  }
 
-function domElemet() {
-
-    const filterBtn = document.getElementById('filterBtn');
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.overlay');
-    const sidebarCloseBtn = document.querySelector('.sidebar__close');
-
-    filterBtn.addEventListener('click', () => {
-        sidebar.classList.add('open');
-        overlay.classList.add('open');
-
-        if(sidebar.classList.contains('open')) {
-            document.body.style.overflowX = 'hidden';
-            document.body.style.position = 'fixed';
-        } else {
-            document.body.style.overflowX = '';
-            document.body.style.position = '';
-        }
-    })
-
-    sidebarCloseBtn.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('open');
-
-        document.body.style.overflowX = '';
-        document.body.style.position = '';
-    })
-
-    overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('open')
-
-        document.body.style.overflowX = '';
-        document.body.style.position = '';
-    })
-    
-    try {
-        const gridItem = document.getElementsByClassName('grid__item');
-        const gridItemImgLink = document.getElementsByClassName('image-wrap');
-        const firstElement = gridItem[0];
-
-        gridItemImgLink[0].href = './inside-page.html'
-        gridItemImgLink[0].target = '_blank'
-
-        firstElement.classList.remove('locked')
-        firstElement.classList.add('unlocked')
-    } catch(e) {
-        console.log(e);
-    }
-}
-
-function clickFilterMore() {
-
+  function clickFilterMore() {
     // Получаем все элементы с классом .changeTextButton
     const changeTextButtons = document.querySelectorAll(".filter__more");
 
     // Добавляем обработчик клика на каждую кнопку
-    changeTextButtons.forEach(function(button) {
-        button.addEventListener("click", toggleTextAndClass);
+    changeTextButtons.forEach(function (button) {
+      button.addEventListener("click", toggleTextAndClass);
     });
 
     // Функция для изменения текста и добавления/удаления класса у соседнего div
     function toggleTextAndClass(event) {
-        const button = event.currentTarget;
-        const textContainer = button.parentElement;
-        const myTextElement = textContainer.querySelector(".filter__more span");
-        const siblingDiv = textContainer.querySelector(".filter__more-item");
-        const filterMore = textContainer.querySelector('.filter__more');
+      const button = event.currentTarget;
+      const textContainer = button.parentElement;
+      const myTextElement = textContainer.querySelector(".filter__more span");
+      const siblingDiv = textContainer.querySelector(".filter__more-item");
+      const filterMore = textContainer.querySelector(".filter__more");
 
-        // Если у текста нет класса "active", то добавляем его, иначе удаляем
-        if (!filterMore.classList.contains("active")) {
-            myTextElement.textContent = "Скрыть";
-            filterMore.classList.add("active");
-            siblingDiv.classList.add("open");
-        } else {
-            myTextElement.textContent = "Еще";
-            filterMore.classList.remove("active");
-            siblingDiv.classList.remove("open");
-        }
+      // Если у текста нет класса "active", то добавляем его, иначе удаляем
+      if (!filterMore.classList.contains("active")) {
+        myTextElement.textContent = "Скрыть";
+        filterMore.classList.add("active");
+        siblingDiv.classList.add("open");
+      } else {
+        myTextElement.textContent = "Еще";
+        filterMore.classList.remove("active");
+        siblingDiv.classList.remove("open");
+      }
     }
-    
-}
+  }
 
+  function domElemet() {
+    try {
+      const gridItem = document.getElementsByClassName("grid__item");
+      const gridItemImgLink = document.getElementsByClassName("image-wrap");
+      const firstElement = gridItem[0];
 
-createClassMenuCard();
-domElemet();
-clickFilterMore();
+      const filterBtn = document.getElementById("filterBtn");
+      const sidebar = document.querySelector(".sidebar");
+      const overlay = document.querySelector(".overlay");
+      const sidebarCloseBtn = document.querySelector(".sidebar__close");
 
-})
+      if (filterBtn) {
+        filterBtn.addEventListener("click", () => {
+          sidebar.classList.add("open");
+          overlay.classList.add("open");
+  
+          if (sidebar.classList.contains("open")) {
+            document.body.style.overflowX = "hidden";
+            document.body.style.position = "fixed";
+          } else {
+            document.body.style.overflowX = "";
+            document.body.style.position = "";
+          }
+        });
+      }
+
+      if (sidebarCloseBtn) {
+            sidebarCloseBtn.addEventListener("click", () => {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("open");
+
+            document.body.style.overflowX = "";
+            document.body.style.position = "";
+        });
+      }
+
+      if (overlay) {
+        overlay.addEventListener("click", () => {
+          sidebar.classList.remove("open");
+          overlay.classList.remove("open");
+  
+          document.body.style.overflowX = "";
+          document.body.style.position = "";
+        });
+      }
+
+      if (gridItemImgLink && gridItemImgLink[0]) {
+        gridItemImgLink[0].href = "./inside-page.html";
+      }
+
+      if (firstElement) {
+        firstElement.classList.remove("locked");
+        firstElement.classList.add("unlocked");
+      }
+
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  function sliderElement() {
+    const swiperSlide = document.querySelector('.swiper');
+
+    if (swiperSlide) {
+
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+    }
+  }
+
+  createClassMenuCard();
+  clickFilterMore();
+  domElemet();
+  sliderElement();
+});
