@@ -207,10 +207,22 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function overlayOpen() {
+        const overlay = document.querySelector(".overlay");
+
+        overlay.classList.add("open");
+    }
+
+    function overlayClose() {
+        const overlay = document.querySelector(".overlay");
+
+        overlay.classList.remove("open");
+    }
+
     function domElemet() {
         try {
             const gridItem = document.getElementsByClassName("grid__item");
-            const gridItemImgLink = document.getElementsByClassName("image-wrap");
+            const popupWrap = document.querySelector(".popup-wrap");
             const firstElement = gridItem[0];
 
             const filterBtn = document.getElementById("filterBtn");
@@ -221,7 +233,7 @@ window.addEventListener("DOMContentLoaded", () => {
             if (filterBtn) {
                 filterBtn.addEventListener("click", () => {
                     sidebar.classList.add("open");
-                    overlay.classList.add("open");
+                    overlayOpen();
 
                     if (sidebar.classList.contains("open")) {
                         document.body.style.overflowX = "hidden";
@@ -236,7 +248,7 @@ window.addEventListener("DOMContentLoaded", () => {
             if (sidebarCloseBtn) {
                 sidebarCloseBtn.addEventListener("click", () => {
                     sidebar.classList.remove("open");
-                    overlay.classList.remove("open");
+                    overlayClose();
 
                     document.body.style.overflowX = "";
                     document.body.style.position = "";
@@ -246,15 +258,13 @@ window.addEventListener("DOMContentLoaded", () => {
             if (overlay) {
                 overlay.addEventListener("click", () => {
                     sidebar.classList.remove("open");
-                    overlay.classList.remove("open");
+                    popupWrap.classList.remove("active");
+                    overlay.style.zIndex = '100'
+                    overlayClose();
 
                     document.body.style.overflowX = "";
                     document.body.style.position = "";
                 });
-            }
-
-            if (gridItemImgLink && gridItemImgLink[0]) {
-                gridItemImgLink[0].href = "./inside-page.html";
             }
 
             if (firstElement) {
@@ -273,20 +283,93 @@ window.addEventListener("DOMContentLoaded", () => {
         if (swiperSlide) {
 
             const swiper = new Swiper('.swiper', {
-                loop: true,
+                loop: false,
+                slidesPerView: "7",
+                spaceBetween: 24,
 
                 // Navigation arrows
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
+
+                // Breakpoint for adaptive
+                breakpoints: {
+                    320: {
+                        slidesPerView: 3,
+                        spaceBetween: 16,
+                    },
+                    768: {
+                        slidesPerView: 6,
+                        spaceBetween: 24,
+                    },
+                    992: {
+                        slidesPerView: 7,
+                        spaceBetween: 24,
+                    },
+                },
             });
 
         }
+    }
+
+    function popupControl() {
+        const popupCloseBtn = document.querySelector(".popu-wrap__close-btn");
+        const popupWrap = document.querySelector(".popup-wrap");
+        const filterItemCheckbox = document.querySelectorAll(".filter__item");
+        const overlay = document.querySelector(".overlay")
+        const sidebar = document.querySelector(".sidebar");
+        const gridItemImgLink = document.querySelectorAll(".image-wrap");
+
+        for (let i = 0; i < filterItemCheckbox.length; i++) {
+
+            filterItemCheckbox[i].addEventListener("click", (event) => {
+                if (!event.target.classList.contains("unlocked")) {
+                    popupWrap.classList.add("active");
+                    overlayOpen();
+                }
+
+                if (window.matchMedia('(max-width: 991px)').matches) {
+                    overlay.style.zIndex = '1000'
+                } else {
+                    overlay.style.zIndex = '100'
+                }
+            })
+        }
+
+        for (let i = 0; i < gridItemImgLink.length; i++) {
+            gridItemImgLink[i].addEventListener("click", (event) => {
+                event.preventDefault();
+                if (!event.target.parentElement.classList.contains("unlocked")) {
+                    popupWrap.classList.add("active");
+                    overlayOpen();
+                } else {
+                    gridItemImgLink[i].href = './inside-page.html'
+
+                    const link = gridItemImgLink[i].getAttribute("href");
+                    window.location.href = link;
+                }
+            })
+        }
+
+        if (popupCloseBtn) {
+            popupCloseBtn.addEventListener("click", function() {
+                popupWrap.classList.remove("active");
+                overlay.style.zIndex = '100'
+                overlayClose();
+
+                if (sidebar.classList.contains("open")) {
+                    overlayOpen();
+                }
+
+            })
+        }
+
     }
 
     createClassMenuCard();
     clickFilterMore();
     domElemet();
     sliderElement();
+    popupControl();
 });

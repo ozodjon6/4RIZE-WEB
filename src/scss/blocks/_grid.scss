@@ -30,6 +30,7 @@
   .image-wrap {
     margin-bottom: 8px;
     position: relative;
+    z-index: 1;
 
     &::before {
       content: "";
@@ -116,7 +117,6 @@
   .image-wrap {
     &::before {
       opacity: 1;
-      cursor: not-allowed;
     }
     svg {
       opacity: 1;

@@ -40,20 +40,23 @@
             <section class="inside-page__heading">
               <div class="container">
                 <div class="row">
-                  <div class="col-12">
+                  <div class="col-12 d-flex a-center j-beetween mb-2 mb-md-0">
                     <a href="./index.html" class="inside-page__back d-flex a-center">
                       <svg class="icon d-block" width="16" height="16">
                         <use xlink:href="./assets/icons/sprite.svg#arrow-down"></use>
                       </svg>
                       <p class="text-default text-x-small">Назад</p>
                     </a>
+                    <svg class="icon d-block d-md-none" width="58" height="23">
+                      <use xlink:href="./assets/icons/sprite.svg#uzum-bank"></use>
+                    </svg>
                   </div>
-                  <div class="col-12 d-flex a-center j-beetween">
+                  <div class="col-12 d-flex align-items-start align-items-lg-center j-beetween">
                     <h2 class="title">
                       Перевод денег с карты на карту Uzum
                     </h2>
-                    <span class="company-logo">
-                      <svg class="icon d-block" width="108" height="43">
+                    <span class="company-logo d-none d-md-block">
+                      <svg class="icon" width="108" height="43">
                         <use xlink:href="./assets/icons/sprite.svg#uzum-bank"></use>
                       </svg>
                     </span>
@@ -62,17 +65,19 @@
               </div>
             </section>
             <section class="inside-page__content">
-              <div class="container">
-                <div class="row">
-                  <div class="col-12 col-lg-8">
-                    <div class="content-body mb-64">
+              <div class="row">
+                <div class="col-12 col-lg-8">
+                  <div class="content-body mb-64">
+                    <div class="container full-container">
                       <div style="padding:70.24% 0 0 0;position:relative;"><iframe
-                          src="https://player.vimeo.com/video/226636274?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                          frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
-                          style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius: 8px;"></iframe>
-                      </div>
+                        src="https://player.vimeo.com/video/226636274?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>
-                    <div class="slider mb-64">
+                    </div>
+                  </div>
+                  <div class="slider mb-64">
+                    <div class="container">
                       <div class="slider__heading">
                         <h4 class="title">Скриншоты</h4>
                       </div>
@@ -81,19 +86,58 @@
                           <!-- Additional required wrapper -->
                           <div class="swiper-wrapper">
                             <!-- Slides -->
-                            <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            ...
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-1.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-2.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-3.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-4.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-5.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-6.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-7.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-4.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-5.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-6.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                              <img src="./assets/image/slider/slide-7.png" alt="">
+                            </div>
                           </div>
-
+  
                           <!-- If we need navigation buttons -->
-                          <div class="swiper-button-prev"></div>
-                          <div class="swiper-button-next"></div>
+                          <div class="swiper-button-prev">
+                            <svg class="icon" width="12" height="12">
+                              <use xlink:href="./assets/icons/sprite.svg#arrow"></use>
+                            </svg>
+                          </div>
+                          <div class="swiper-button-next">
+                            <svg class="icon" width="12" height="12">
+                              <use xlink:href="./assets/icons/sprite.svg#arrow"></use>
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="options d-block d-lg-none">
+                  </div>
+                  <div class="options d-block d-lg-none">
+                    <div class="container">
                       <ul class="options__list">
                         <li class="options__item">
                           <div class="options__item-wrap">
@@ -183,15 +227,19 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="card-image mb-64">
+                  </div>
+                  <div class="card-image mb-64">
+                    <div class="container">
                       <div class="card-image__heading">
                         <h4 class="title">Карта пути - Перевод денег с карты на карту Uzum</h4>
                       </div>
                       <div class="card-image__img">
-                        <img src="./assets/image/insade-page-1.png" alt="">
+                        <img src="./assets/image/insade-page-1.png" srcset="./assets/image/insade-page-1@2x.png" alt="">
                       </div>
                     </div>
-                    <div class="product">
+                  </div>
+                  <div class="product">
+                    <div class="container">
                       <div class="product__heading">
                         <h4 class="title">Другие похожие продукты</h4>
                       </div>
@@ -249,8 +297,10 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-4 d-none d-lg-block">
-                    <div class="options">
+                </div>
+                <div class="col-12 col-lg-4 d-none d-lg-block">
+                  <div class="options">
+                    <div class="container">
                       <ul class="options__list">
                         <li class="options__item">
                           <div class="options__item-wrap">

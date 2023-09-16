@@ -45,6 +45,10 @@
     border-radius: 50%;
     background-color: var(--bg-primary-colour);
     border: 1px solid var(--bg-gray-sidebar-checkbox-colour);
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .sidebar.open .sidebar__close {

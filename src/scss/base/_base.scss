@@ -117,6 +117,13 @@ body {
   max-width: 1980px;
 }
 
+.container.full-container {
+  @include respond(mobilemini) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 .icon {
   transition: all 0.3s;
   stroke-width: 0;
