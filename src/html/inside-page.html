@@ -15,7 +15,7 @@
   <div id="root">
     <div class="outer-wrapper">
       <div class="wrapper">
-        <div class="main-app">
+        <div class="main-app inside-page">
           <header class="header">
             <div class="container">@@include('blocks/header.html')</div>
           </header>
@@ -68,7 +68,6 @@
                         <div class="swiper">
                           <!-- Additional required wrapper -->
                           <div class="swiper-wrapper">
-                            <!-- Slides -->
                             <div class="swiper-slide">
                               <img src="./assets/image/slider/slide-1.png" alt="">
                             </div>
@@ -216,9 +215,12 @@
                       <div class="card-image__heading">
                         <h4 class="title">Карта пути - Перевод денег с карты на карту Uzum</h4>
                       </div>
-                      <div class="card-image__img">
-                        <img src="./assets/image/insade-page-1.png" srcset="./assets/image/insade-page-1@2x.png" alt="">
-                      </div>
+                      <a href="./assets/image/insade-page-1@2x.png" class="card-image__img" data-fslightbox="gallery">
+                        <img src="./assets/image/insade-page-1.png" srcset="./assets/image/insade-page-1@2x.png" alt="Product image">
+                        <svg class="icon" width="32" height="32">
+                          <use xlink:href="./assets/icons/sprite.svg#stretch"></use>
+                        </svg>
+                      </a>
                     </div>
                   </div>
                   <div class="product">
@@ -391,6 +393,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="./js/fslightbox.js"></script>
   <script src="./js/index.js"></script>
 </body>
 

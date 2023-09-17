@@ -314,7 +314,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     function popupControl() {
-        const popupCloseBtn = document.querySelector(".popu-wrap__close-btn");
+        const popupCloseBtn = document.querySelectorAll(".popup-wrap__close-btn");
         const popupWrap = document.querySelector(".popup-wrap");
         const filterItemCheckbox = document.querySelectorAll(".filter__item");
         const overlay = document.querySelector(".overlay")
@@ -353,16 +353,20 @@ window.addEventListener("DOMContentLoaded", () => {
         }
 
         if (popupCloseBtn) {
-            popupCloseBtn.addEventListener("click", function() {
-                popupWrap.classList.remove("active");
-                overlay.style.zIndex = '100'
-                overlayClose();
+            for (let i = 0; i < popupCloseBtn.length; i++) {
+                popupCloseBtn[i].addEventListener("click", function() {
+                    if (popupWrap.classList.contains("active")) {
+                        popupWrap.classList.remove("active");
+                    }
+                    overlay.style.zIndex = '100'
+                    overlayClose();
 
-                if (sidebar.classList.contains("open")) {
-                    overlayOpen();
-                }
+                    if (sidebar.classList.contains("open")) {
+                        overlayOpen();
+                    }
 
-            })
+                })
+            }
         }
 
     }
