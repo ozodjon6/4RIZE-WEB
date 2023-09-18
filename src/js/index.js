@@ -295,6 +295,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // Breakpoint for adaptive
         breakpoints: {
+          0: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
           320: {
             slidesPerView: 3,
             spaceBetween: 16,
@@ -371,9 +375,44 @@ window.addEventListener("DOMContentLoaded", () => {
 
   }
 
+
+  function magnificPopup() {
+    const gallery = document.querySelector(".gallery");
+    if (gallery) {
+      $('.gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        mainClass: 'gallery-slider',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: false,
+        },
+        image: {
+          titleSrc: function(item) {
+           
+            var $gallery = $('.gallery');
+            var $result = '';
+            if ($gallery.find('li').length>0) {
+              for (var i=0; i<$gallery.find('li').length; i++) {
+                var $cl_active = '';
+                if (item.index == i) $cl_active = ' class="active"'; else $cl_active = '';
+                var $thumb = $gallery.find('li:eq('+i+')').find('img').attr('src');
+                $result += '<li onclick="javascript:$(\'.gallery\').magnificPopup(\'goTo\', '+i+');return false;"'+$cl_active+'>' +
+                    '<img src="' + $thumb + '" alt="">'
+                  '</li>';
+              }
+            }
+            return $result;
+          }
+        }
+      });
+    }
+  }
+
   createClassMenuCard();
   clickFilterMore();
   domElemet();
   sliderElement();
   popupControl();
+  magnificPopup();
 });

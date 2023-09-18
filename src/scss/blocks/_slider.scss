@@ -7,10 +7,20 @@
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s;
+    border-radius: 8px;
+
+    .swiper-slide__gallery {
+      display: block;
+      height: 100%;
+    }
+
+    &:hover {
+      box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.06);
+    }
   }
 
   .swiper-slide img {
@@ -52,16 +62,16 @@
       border: 1px solid #D3D6DB;
       box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.13);
 
+      @include respond(mobilemini) {
+        display: none;
+      }
+
       &:hover svg {
         color: var(--icons-brand-primary-colour);
       }
 
       &::after {
         display: none;
-      }
-
-      &.swiper-button-disabled {
-
       }
 
       svg {

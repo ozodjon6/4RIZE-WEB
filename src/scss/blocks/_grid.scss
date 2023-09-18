@@ -104,6 +104,28 @@
   }
 }
 
+.product__item {
+  .grid__item-title {
+    color: var(--link-primary-colour);
+    margin-bottom: 2px;
+    font-weight: 700;
+  }
+
+  .grid__item-descr {
+    color: var(--link-secondary-colour);
+  }
+
+  .grid__item-rating {
+    svg {
+      margin-right: 4px;
+    }
+
+    span {
+      color: var(--text-black-colour);
+    }
+  }
+}
+
 .grid__item.unlocked {
   .image-wrap {
     .image-wrap__access {

@@ -52,5 +52,9 @@
   .top-menu__link {
     display: block;
     color: var(--link-primary-colour);
+
+    &:hover {
+      color: var(--link-primary-hover-colour);
+    }
   }
 }

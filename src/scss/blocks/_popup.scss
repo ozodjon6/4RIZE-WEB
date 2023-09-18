@@ -71,10 +71,41 @@
     .registration-wrap__content {
         max-width: 40rem;
         margin: 0 auto;
+
+        .btn {
+            margin-top: 32px;
+
+            @include respond(mobilemini) {
+              margin-top: 24px;
+            }
+        }
     }
 }
 
 .registration-wrap__field {
+
+    &.error {
+        .registration-wrap__input {
+            box-shadow: inset 0 0 0 1px var(--color-system-error);
+        }
+
+        .registration-wrap__error {
+            display: block;
+        }
+    }
+
+    .registration-wrap__error {
+        margin-top: 4px;
+        padding-left: 8px;
+        display: block;
+        color: var(--color-system-error);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 150%; /* 18px */
+        letter-spacing: 0.12px;
+        display: none;
+        transition: all 0.3s;
+    }
 
     &:not(:last-child) {
         margin-bottom: 18px;
@@ -83,13 +114,16 @@
     .registration-wrap__input {
         border-radius: 4px;
         width: 100%;
-        border: 1px solid var(--input-color-input-border-normal);
+        box-shadow: inset 0 0 0 1px var(--input-color-input-border-normal);
         background: var(--input-color-input-bg-normal);
         padding: 16px;
         color: var(--text-secondary-colour);
         line-height: 165%;
         font-size: 14px;
         font-weight: 500;
+    }
+    .registration-wrap__input.error {
+        box-shadow: inset 0 0 0 1px var(--color-system-error);
     }
 
     .registration-wrap__field-text {
@@ -109,20 +143,34 @@
     }
 }
 
-.registration-wrap__label {
-    margin: 32px 0;
+.registration-wrap__field {
+    
+    &:last-child {
+        margin: 32px 0;
+    }
+
+    &.error {
+        .registration-wrap__input,
+        .registration-wrap__mask {
+            box-shadow: inset 0 0 0 1px var(--color-system-error);
+        }
+    }
 
     @include respond(mobilemini) {
       margin: 24px 0;
     }
 }
 
-.registration-wrap__label input:checked+ .registration-wrap__mask {
+.registration-wrap__label {
+    margin: 32px 0;
+}
+
+.registration-wrap__field input:checked+ .registration-wrap__mask {
     background-color: var(--brand-primary-colour);
     border: none 0;
 }
 
-.registration-wrap__label input:checked+ .registration-wrap__mask::before {
+.registration-wrap__field input:checked+ .registration-wrap__mask::before {
     opacity: 1;
 }
 
@@ -149,7 +197,7 @@
     height: 20px;
     border-radius: 4px;
     margin-right: 8px;
-    border: 1px solid var(--bg-gray-sidebar-checkbox-colour);
+    box-shadow: inset 0 0 0 1px var(--bg-gray-sidebar-checkbox-colour);
     background-color: var(--input-color-input-bg-normal);
     position: relative;
 
