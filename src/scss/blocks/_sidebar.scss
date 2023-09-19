@@ -53,6 +53,7 @@
 
 .sidebar.open .sidebar__close {
     display: flex;
+    -webkit-transform: translateZ(0);
 }
 
 .sidebar__logo {
