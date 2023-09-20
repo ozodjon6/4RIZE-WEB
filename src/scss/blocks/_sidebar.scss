@@ -1,48 +1,54 @@
 .sidebar {
-    max-width: 23rem;
-    flex: 0 0 23rem;
     position: relative;
-    padding: 25px 0;
-    height: 100vh;
-    border-right: 1px solid var(--primary-borderline-colour);
-    background-color: var(--bg-primary-colour);
+    @include respond(tabdesk991) {
+        display: flex;
+        flex: 0 0 23rem;
+    }
 
     .sidebar__inner {
         width: 100%;
-    }
+        max-width: 23rem;
+        position: relative;
+        padding: 25px 0;
+        height: 100vh;
+        border-right: 1px solid var(--primary-borderline-colour);
+        background-color: var(--bg-primary-colour);
 
-    @include respond(tabdesk) {
-        display: flex;
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 100;
-        width: 100%;
-        height: 100%;
-        transition: transform .4s ease;
-        transform: translateX(100%);
-        border: none 0;
+        @include respond(tabdesk) {
+            display: flex;
+            position: fixed;
+            flex-direction: column;
+            top: 0;
+            right: 0;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            transition: transform .3s;
+            transform: translateX(100%);
+            border: none 0;
+        }
     }
 }
 
-.sidebar.open {
+.sidebar.open .sidebar__inner {
     transform: none;
     z-index: 1000;
     overflow-y: auto;
-    scrollbar-width: thin;
 }
 
 .sidebar__close {
-    display: none;
+    transform: translateX(100%);
+    display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     top: 20px;
-    right: 24.6rem;
+    right: -1rem;
     z-index: 100;
     width: 32px;
     height: 32px;
     border-radius: 50%;
+    transition: all 0.3s;
     background-color: var(--bg-primary-colour);
     border: 1px solid var(--bg-gray-sidebar-checkbox-colour);
 
@@ -52,8 +58,9 @@
 }
 
 .sidebar.open .sidebar__close {
-    display: flex;
-    -webkit-transform: translateZ(0);
+    z-index: 999;
+    right: 24.6rem;
+    transform: none;
 }
 
 .sidebar__logo {
