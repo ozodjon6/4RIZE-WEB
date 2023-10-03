@@ -16,6 +16,17 @@
       padding: 24px 16px;
     }
 
+    @include respond(tabdesk) {
+      max-width: 95%;
+      height: 95%;
+    }
+
+    @include respond(mobilemini) {
+      max-width: 100%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
     .popup-wrap__close-btn {
         position: absolute;
         display: flex;
@@ -36,6 +47,10 @@
 
         &:hover {
             cursor: pointer;
+        }
+
+        &:hover svg {
+            color: var(--icons-brand-secondary-colour);
         }
     }
 }
@@ -143,6 +158,11 @@
     }
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
 .registration-wrap__field {
     
     &:last-child {
@@ -168,6 +188,7 @@
 .registration-wrap__field input:checked+ .registration-wrap__mask {
     background-color: var(--brand-primary-colour);
     border: none 0;
+    box-shadow: none;
 }
 
 .registration-wrap__field input:checked+ .registration-wrap__mask::before {

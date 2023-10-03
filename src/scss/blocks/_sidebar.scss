@@ -109,7 +109,7 @@
         }
 
         .filter__checkbox-wrap input:checked+.filter__mask::before {
-            opacity: 1;
+            opacity: 1; 
         }
         .filter__checkbox-wrap input:checked+.filter__mask {
             background-color: var(--brand-primary-colour);

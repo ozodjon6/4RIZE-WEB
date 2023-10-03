@@ -339,10 +339,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const overlay = document.querySelector(".overlay")
     const sidebar = document.querySelector(".sidebar");
     const gridItemImgLink = document.querySelectorAll(".image-wrap");
+    const changeTextButtons = document.querySelectorAll(".filter__more");
 
     for (let i = 0; i < filterItemCheckbox.length; i++) {
 
       filterItemCheckbox[i].addEventListener("click", (event) => {
+        event.preventDefault();
         if (!event.target.classList.contains("unlocked")) {
           popupWrap.classList.add("active");
           overlayOpen();
@@ -367,6 +369,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
           const link = gridItemImgLink[i].getAttribute("href");
           window.location.href = link;
+        }
+      })
+    }
+
+    for (let i = 0; i < changeTextButtons.length; i++) {
+      changeTextButtons[i].addEventListener("click", (event) => {
+        if (!event.target.parentElement.classList.contains("unlocked")) {
+          popupWrap.classList.add("active");
+          overlayOpen();
         }
       })
     }
@@ -423,11 +434,38 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+  function changeTextAndIcon() {
+    const btnChangeLanguage = document.querySelector('.header__button-lang');
+    const languageFlag = document.getElementById('languageFlag');
+    const languageText = document.getElementById('languageText');
+
+    const texts = ['Eng', 'Rus', 'Uzb'];
+    const icons = ['./assets/icons/flag.svg', './assets/icons/flag-ru.svg', './assets/icons/flag-uz.svg', ]
+
+    let currentIndex = 0;
+
+    function changeLanguage() {
+        if (currentIndex === texts.length - 1) {
+            currentIndex = 0;
+        } else {
+            currentIndex++;
+        }
+
+        languageFlag.src = icons[currentIndex];
+        languageText.textContent = texts[currentIndex];
+    }
+
+    btnChangeLanguage.addEventListener('click', (e) => {
+        e.preventDefault();
+        changeLanguage();
+    });
+}
 
   createClassMenuCard();
-  clickFilterMore();
+  // clickFilterMore();
   domElemet();
   sliderElement();
   popupControl();
   magnificPopup();
+  changeTextAndIcon();
 });
