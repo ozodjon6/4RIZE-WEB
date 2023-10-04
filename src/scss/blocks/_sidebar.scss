@@ -55,6 +55,10 @@
     &:hover {
         cursor: pointer;
     }
+
+    &:hover svg {
+        color: var(--icons-brand-secondary-colour);
+    }
 }
 
 .sidebar.open .sidebar__close {
@@ -64,9 +68,8 @@
 }
 
 .sidebar__logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    text-align: center;
 }
 
 .sidebar-menu {

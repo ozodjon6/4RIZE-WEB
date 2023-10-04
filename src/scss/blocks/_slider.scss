@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: display 0.3s;
+    transition: box-shadow 0.3s;
     border-radius: 8px;
 
     .swiper-slide__gallery {
@@ -27,7 +27,8 @@
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
+    border-radius: 8px;
   }
 
   .slider {

@@ -1,22 +1,25 @@
 .product__list {
-    gap: 32px;
+  gap: 32px;
+  @include respond(mobilemini) {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .product__item {
     @include respond(mobilemini) {
-      flex-direction: column;
-      gap: 0;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
     }
-
-    .product__item {
-
-        @include respond(mobilemini) {
-            &:not(:last-child) {
-                margin-bottom: 20px;
-            }
-        }
-    }
+  }
 }
 
 .product__item {
-    .image-wrap {
-        display: block;
+  .image-wrap {
+    display: block;
+
+    img {
+      border-radius: 8px;
     }
+  }
 }

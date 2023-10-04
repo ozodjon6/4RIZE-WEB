@@ -25,6 +25,8 @@
       max-width: 100%;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+      height: 100%;
+      margin-top: 14px;
     }
 
     .popup-wrap__close-btn {
@@ -70,6 +72,20 @@
     @include respond(mobilemini) {
       padding: 3.2rem 1.6rem;
     }
+}
+
+.popup-wrap.success-completed {
+    @include respond(mobilemini) {
+      height: 60%;
+      bottom: 0;
+      transform: translate(-50%, -20%);
+    }
+}
+
+.popup-wrap.success-done {
+    @include respond(mobilemini) {
+        margin-top: 62px;
+      }
 }
 
 .registration-wrap {

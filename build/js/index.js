@@ -270,15 +270,20 @@ window.addEventListener("DOMContentLoaded", () => {
                 });
             }
 
-            if (overlay) {
+            if (overlay && sidebar) {
                 overlay.addEventListener("click", () => {
                     sidebar.classList.remove("open");
-                    popupWrap.classList.remove("active");
                     overlay.style.zIndex = '100'
                     overlayClose();
 
                     document.body.style.overflowX = "";
                     document.body.style.position = "";
+                });
+            }
+            if (overlay) {
+                overlay.addEventListener("click", () => {
+                    popupWrap.classList.remove("active");
+                    overlayClose();
                 });
             }
 
@@ -340,14 +345,17 @@ window.addEventListener("DOMContentLoaded", () => {
         const sidebar = document.querySelector(".sidebar");
         const gridItemImgLink = document.querySelectorAll(".image-wrap");
         const changeTextButtons = document.querySelectorAll(".filter__more");
+        const insidePageClickBtn = document.querySelectorAll(".info-list__link");
 
         for (let i = 0; i < filterItemCheckbox.length; i++) {
 
             filterItemCheckbox[i].addEventListener("click", (event) => {
                 event.preventDefault();
                 if (!event.target.classList.contains("unlocked")) {
-                    popupWrap.classList.add("active");
-                    overlayOpen();
+                    if (popupWrap) {
+                        popupWrap.classList.add("active");
+                        overlayOpen();
+                    }
                 }
 
                 if (window.matchMedia('(max-width: 991px)').matches) {
@@ -361,7 +369,7 @@ window.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < gridItemImgLink.length; i++) {
             gridItemImgLink[i].addEventListener("click", (event) => {
                 event.preventDefault();
-                if (!event.target.parentElement.classList.contains("unlocked")) {
+                if (event.target.parentElement.classList.contains("locked")) {
                     popupWrap.classList.add("active");
                     overlayOpen();
                 } else {
@@ -382,6 +390,14 @@ window.addEventListener("DOMContentLoaded", () => {
             })
         }
 
+        for (let i = 0; i < insidePageClickBtn.length; i++) {
+            insidePageClickBtn[i].addEventListener("click", (event) => {
+                event.preventDefault();
+                popupWrap.classList.add("active");
+                overlayOpen();
+            })
+        }
+
         if (popupCloseBtn) {
             for (let i = 0; i < popupCloseBtn.length; i++) {
                 popupCloseBtn[i].addEventListener("click", function() {
@@ -391,7 +407,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     overlay.style.zIndex = '100'
                     overlayClose();
 
-                    if (sidebar.classList.contains("open")) {
+                    if (sidebar && sidebar.classList.contains("open")) {
                         overlayOpen();
                     }
 
