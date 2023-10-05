@@ -38,6 +38,12 @@
     @include respond(tabdesk) {
       margin-right: 0;
     }
+
+    @include respond(mobilemini) {
+      .container {
+        padding-right: 0;
+      }
+    }
   }
 
   .slider__content {

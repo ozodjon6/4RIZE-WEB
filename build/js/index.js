@@ -307,7 +307,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const swiper = new Swiper('.swiper', {
                 loop: false,
                 slidesPerView: "7",
-                spaceBetween: 24,
+                spaceBetween: 12,
 
                 // Navigation arrows
                 navigation: {
@@ -318,25 +318,23 @@ window.addEventListener("DOMContentLoaded", () => {
                 // Breakpoint for adaptive
                 breakpoints: {
                     0: {
-                        slidesPerView: 2,
-                        spaceBetween: 16,
+                        slidesPerView: 2.8,
+                        spaceBetween: 12,
                     },
-                    320: {
-                        slidesPerView: 3,
-                        spaceBetween: 16,
+                    321: {
+                        slidesPerView: 4,
                     },
                     768: {
                         slidesPerView: 6,
-                        spaceBetween: 24,
                     },
                     992: {
-                        slidesPerView: 6,
-                        spaceBetween: 24,
+                        slidesPerView: 6.6,
                     },
                 },
             });
 
         }
+
     }
 
     function popupControl() {
@@ -452,7 +450,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 mainClass: 'gallery-slider',
                 gallery: {
                     enabled: true,
-                    navigateByImgClick: false,
+                    navigateByImgClick: true,
                 },
                 image: {
                     titleSrc: function(item) {
