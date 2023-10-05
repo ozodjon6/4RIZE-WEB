@@ -283,6 +283,8 @@ window.addEventListener("DOMContentLoaded", () => {
             if (overlay) {
                 overlay.addEventListener("click", () => {
                     popupWrap.classList.remove("active");
+                    document.body.style.overflowX = "";
+                    document.body.style.position = "";
                     overlayClose();
                 });
             }
@@ -328,7 +330,7 @@ window.addEventListener("DOMContentLoaded", () => {
                         spaceBetween: 24,
                     },
                     992: {
-                        slidesPerView: 7,
+                        slidesPerView: 6,
                         spaceBetween: 24,
                     },
                 },
@@ -354,7 +356,12 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (!event.target.classList.contains("unlocked")) {
                     if (popupWrap) {
                         popupWrap.classList.add("active");
+                        document.body.style.overflowX = "hidden";
+                        document.body.style.position = "fixed";
                         overlayOpen();
+                    } else {
+                        document.body.style.overflowX = "";
+                        document.body.style.position = "";
                     }
                 }
 
@@ -372,11 +379,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (event.target.parentElement.classList.contains("locked")) {
                     popupWrap.classList.add("active");
                     overlayOpen();
+                    document.body.style.overflowX = "hidden";
+                    document.body.style.position = "fixed";
                 } else {
                     gridItemImgLink[i].href = './inside-page.html'
 
                     const link = gridItemImgLink[i].getAttribute("href");
                     window.location.href = link;
+                    document.body.style.overflowX = "";
+                    document.body.style.position = "";
                 }
             })
         }
@@ -386,6 +397,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (!event.target.parentElement.classList.contains("unlocked")) {
                     popupWrap.classList.add("active");
                     overlayOpen();
+                    document.body.style.overflowX = "hidden";
+                    document.body.style.position = "fixed";
+                } else {
+                    document.body.style.overflowX = "";
+                    document.body.style.position = "";
                 }
             })
         }
@@ -395,6 +411,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 event.preventDefault();
                 popupWrap.classList.add("active");
                 overlayOpen();
+                if (popupWrap.classList.contains("active")) {
+                    document.body.style.overflowX = "hidden";
+                    document.body.style.position = "fixed";
+                } else {
+                    document.body.style.overflowX = "";
+                    document.body.style.position = "";
+                }
             })
         }
 
@@ -403,6 +426,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 popupCloseBtn[i].addEventListener("click", function() {
                     if (popupWrap.classList.contains("active")) {
                         popupWrap.classList.remove("active");
+                        document.body.style.overflowX = "";
+                        document.body.style.position = "";
                     }
                     overlay.style.zIndex = '100'
                     overlayClose();
