@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: 0;
+    position: relative;
     
     @include respond(mobilemini) {
         width: 600px;
