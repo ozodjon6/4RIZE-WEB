@@ -300,7 +300,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function sliderElement() {
-    const swiperSlide = document.querySelector('.swiper');
+    const swiperSlide = document.querySelector('.slider__content .swiper');
 
     if (swiperSlide) {
 
@@ -443,39 +443,41 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  function magnificPopup() {
-    const gallery = document.querySelector(".gallery");
-    if (gallery) {
-      $('.gallery').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        mainClass: 'gallery-slider',
-        gallery: {
-          enabled: true,
-          navigateByImgClick: true,
-        },
-        image: {
-          titleSrc: function(item) {
+  // function magnificPopup() {
+  //   const gallery = document.querySelector(".gallery");
+  //   if (gallery) {
+  //     $('.gallery').magnificPopup({
+  //       delegate: 'a',
+  //       type: 'image',
+  //       mainClass: 'gallery-slider',
+  //       gallery: {
+  //         enabled: true,
+  //         navigateByImgClick: true,
+  //       },
+  //       image: {
+  //         titleSrc: function(item) {
            
-            var $gallery = $('.gallery');
-            var $result = '';
-            if ($gallery.find('li').length>0) {
-              for (var i=0; i<$gallery.find('li').length; i++) {
-                var $cl_active = '';
-                if (item.index == i) $cl_active = ' class="active"'; 
-                else $cl_active = '';
-                var $thumb = $gallery.find('li:eq('+i+')').find('img').attr('src');
-                $result += '<li onclick="javascript:$(\'.gallery\').magnificPopup(\'goTo\', '+i+');return false;"'+$cl_active+'>' +
-                    '<img src="' + $thumb + '" alt="">'
-                  '</li>';
-              }
-            }
-            return $result;
-          }
-        }
-      });
-    }
-  }
+  //           var $gallery = $('.gallery');
+  //           var $result = '';
+  //           if ($gallery.find('li').length>0) {
+  //             for (var i=0; i<$gallery.find('li').length; i++) {
+  //               var $cl_active = '';
+  //               if (item.index == i) $cl_active = ' class="active"'; 
+  //               else $cl_active = '';
+  //               var $thumb = $gallery.find('li:eq('+i+')').find('img').attr('src');
+  //               $result += '<li onclick="javascript:$(\'.gallery\').magnificPopup(\'goTo\', '+i+');return false;"'+$cl_active+'>' +
+  //                   '<img src="' + $thumb + '" alt="">'
+  //                 '</li>';
+  //             }
+  //           }
+  //           return $result;
+  //         }
+  //       }
+  //     });
+  //   }
+  // }
+
+  
   function changeTextAndIcon() {
     const btnChangeLanguage = document.querySelector('.header__button-lang');
     const languageFlag = document.getElementById('languageFlag');
@@ -566,13 +568,90 @@ function customSelect() {
   }
 }
 
+function magnificPopupWithJquery() {
+  if (typeof jQuery !== 'undefined') {
+    $(document).ready(function () {
+  
+      $(".slider__content .swiper-slide").on("click", function() {
+  
+        let photoIndex = 0;
+        let $this = $(this);
+      
+        // console.log($this)
+        
+      
+      $(".gallery-top .swiper-slide").each(function(i, v) {
+        const thisSi = $this.data("startindex");
+        const topSi = $(v).data("startindex");
+        if ( thisSi === topSi ) {
+          
+          photoIndex = i;
+        } 
+      });
+      
+      $.magnificPopup.open({
+        items: {
+          src: "#ip-gallery", // can be a HTML string, jQuery object, or CSS selector
+          type: "inline"
+        },
+        closeBtnInside: true,
+        removalDelay: 300,
+        // mainClass: "mfp-zoom-in",
+        callbacks: {
+          beforeOpen: function() {},
+          open: function() {
+      
+            $(".gallery-container").addClass("active");
+      
+            var galleryThumbs = new Swiper(".gallery-thumbs", {
+              spaceBetween: 10,
+              slidesPerView: "auto",
+              centeredSlides: true,
+              slideToClickedSlide: true,
+              loop: false,
+              // watchSlidesVisibility: true,
+              // watchSlidesProgress: true,
+              // watchOverflow: true,
+            });
+            var galleryTop = new Swiper(".gallery-top", {
+              spaceBetween: 10,
+              loop: false,
+              freeMode: false,
+              initialSlide: photoIndex,
+              navigation: {
+                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-button-next"
+              },
+              thumbs: {
+                swiper: galleryThumbs
+              }
+            });
+            
+            // galleryTop.controller.control = galleryThumbs;
+            // galleryThumbs.controller.control = galleryTop;
+          },
+          close: function() {}
+        }
+      })
+      })
+      
+  
+    }); 
+  } else {
+    console.log("jQuery is not available on this page.");
+  }
+}
+
+
+
   createClassMenuCard();
   // clickFilterMore();
   domElemet();
   sliderElement();
   popupControl();
-  magnificPopup();
+  // magnificPopup();
   changeTextAndIcon();
   toggleInput();
   customSelect();
+  magnificPopupWithJquery();
 });
