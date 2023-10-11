@@ -1,13 +1,15 @@
 .swiper {
   width: 100%;
-  position: unset;
+  @media (min-width: 768px) {
+    position: unset;
+  }
 }
 
 .swiper.main-slider {
   height: 202px;
 
   .swiper-slide {
-    transition: all .3s;
+    transition: box-shadow transform .3s;
     .swiper-slide__gallery {
       display: block;
       height: 100%;
@@ -28,12 +30,7 @@
   align-items: center;
   transition: box-shadow 0.3s;
   border-radius: 8px;
-  transform: translateZ(0);
-
-  .swiper-slide__gallery {
-    display: block;
-    height: 100%;
-  }
+  flex-shrink: 0;
 }
 
 .swiper-slide img {
@@ -58,7 +55,13 @@
   }
 }
 
-.slider__content {
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  display: none;
+}
+
+.slider__content,
+.gallery-top {
   position: relative;
 
   .swiper-button-next {
@@ -102,6 +105,24 @@
   }
 }
 
+.gallery-top {
+  .swiper-button-next {
+    transform: rotate(180deg);
+    right: 8px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    @include respond(mobilemini) {
+      display: flex;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 8px;
+  }
+}
+
 // card-image__heading
 
 .card-image__heading,
@@ -114,18 +135,18 @@
 
 .swiper.gallery-thumbs {
   height: 100%;
-  width: 100%;
-  overflow: scroll;
 }
 
 .gallery-thumbs {
-  overflow-x: scroll;
   width: 100%;
   .swiper-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translate3d(0,0,0) !important;
+    
+    @media (min-width: 768px) {
+      transform: translate3d(0,0,0) !important;
+    }
 
     .swiper-slide {
       width: 6rem!important;
@@ -137,6 +158,7 @@
       cursor: pointer;
       transition: all .3s;
       border: 2px solid transparent;
+      flex-shrink: 0;
 
       &.swiper-slide-thumb-active {
         border-color: #ff8c52;

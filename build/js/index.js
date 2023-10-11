@@ -572,66 +572,64 @@ window.addEventListener("DOMContentLoaded", () => {
         if (typeof jQuery !== 'undefined') {
             $(document).ready(function() {
 
-                $(".slider__content .swiper-slide").on("click", function() {
+                $(".slider__content .swiper-slide").each(function(i, v) {
+                    $(this).on("click", function() {
 
-                    let photoIndex = 0;
-                    let $this = $(this);
-
-                    // console.log($this)
+                        let photoIndex = i;
+                        let $this = $(this);
 
 
-                    $(".gallery-top .swiper-slide").each(function(i, v) {
-                        const thisSi = $this.data("startindex");
-                        const topSi = $(v).data("startindex");
-                        if (thisSi === topSi) {
+                        $(".gallery-top .swiper-slide").each(function(i, v) {
+                            const thisSi = $this.data("startindex");
+                            const topSi = $(v).data("startindex");
+                            if (thisSi === topSi) {
+                                photoIndex = i;
+                            }
+                        });
 
-                            photoIndex = i;
-                        }
-                    });
-
-                    $.magnificPopup.open({
-                        items: {
-                            src: "#ip-gallery", // can be a HTML string, jQuery object, or CSS selector
-                            type: "inline"
-                        },
-                        closeBtnInside: true,
-                        removalDelay: 300,
-                        // mainClass: "mfp-zoom-in",
-                        callbacks: {
-                            beforeOpen: function() {},
-                            open: function() {
-
-                                $(".gallery-container").addClass("active");
-
-                                var galleryThumbs = new Swiper(".gallery-thumbs", {
-                                    spaceBetween: 10,
-                                    slidesPerView: "auto",
-                                    centeredSlides: true,
-                                    slideToClickedSlide: true,
-                                    loop: false,
-                                    // watchSlidesVisibility: true,
-                                    // watchSlidesProgress: true,
-                                    // watchOverflow: true,
-                                });
-                                var galleryTop = new Swiper(".gallery-top", {
-                                    spaceBetween: 10,
-                                    loop: false,
-                                    freeMode: false,
-                                    initialSlide: photoIndex,
-                                    navigation: {
-                                        prevEl: ".swiper-button-prev",
-                                        nextEl: ".swiper-button-next"
-                                    },
-                                    thumbs: {
-                                        swiper: galleryThumbs
-                                    }
-                                });
-
-                                // galleryTop.controller.control = galleryThumbs;
-                                // galleryThumbs.controller.control = galleryTop;
+                        $.magnificPopup.open({
+                            items: {
+                                src: "#ip-gallery", // can be a HTML string, jQuery object, or CSS selector
+                                type: "inline"
                             },
-                            close: function() {}
-                        }
+                            closeBtnInside: true,
+                            removalDelay: 300,
+                            // mainClass: "mfp-zoom-in",
+                            callbacks: {
+                                beforeOpen: function() {},
+                                open: function() {
+
+                                    $(".gallery-container").addClass("active");
+
+                                    var galleryThumbs = new Swiper(".gallery-thumbs", {
+                                        spaceBetween: 12,
+                                        slidesPerView: "4",
+                                        centeredSlides: true,
+                                        slideToClickedSlide: true,
+                                        loop: false,
+                                    });
+
+                                    var galleryTop = new Swiper(".gallery-top", {
+                                        spaceBetween: 12,
+                                        loop: false,
+                                        freeMode: false,
+                                        initialSlide: photoIndex,
+                                        navigation: {
+                                            prevEl: ".swiper-button-prev",
+                                            nextEl: ".swiper-button-next"
+                                        },
+                                        thumbs: {
+                                            swiper: galleryThumbs
+                                        }
+                                    });
+
+                                    // galleryTop.controller.control = galleryThumbs;
+                                    // galleryThumbs.controller.control = galleryTop;
+                                },
+                                close: function() {}
+                            }
+                        })
+
                     })
                 })
 

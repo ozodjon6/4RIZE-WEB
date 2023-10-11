@@ -572,21 +572,19 @@ function magnificPopupWithJquery() {
   if (typeof jQuery !== 'undefined') {
     $(document).ready(function () {
   
-      $(".slider__content .swiper-slide").on("click", function() {
-  
-        let photoIndex = 0;
-        let $this = $(this);
-      
-        // console.log($this)
+      $(".slider__content .swiper-slide").each(function (i,v) {
+        $(this).on("click", function() {
+
+          let photoIndex = i;
+          let $this = $(this);
         
       
       $(".gallery-top .swiper-slide").each(function(i, v) {
         const thisSi = $this.data("startindex");
         const topSi = $(v).data("startindex");
         if ( thisSi === topSi ) {
-          
           photoIndex = i;
-        } 
+        }
       });
       
       $.magnificPopup.open({
@@ -604,17 +602,15 @@ function magnificPopupWithJquery() {
             $(".gallery-container").addClass("active");
       
             var galleryThumbs = new Swiper(".gallery-thumbs", {
-              spaceBetween: 10,
-              slidesPerView: "auto",
+              spaceBetween: 12,
+              slidesPerView: "4",
               centeredSlides: true,
               slideToClickedSlide: true,
               loop: false,
-              // watchSlidesVisibility: true,
-              // watchSlidesProgress: true,
-              // watchOverflow: true,
             });
+            
             var galleryTop = new Swiper(".gallery-top", {
-              spaceBetween: 10,
+              spaceBetween: 12,
               loop: false,
               freeMode: false,
               initialSlide: photoIndex,
@@ -633,6 +629,8 @@ function magnificPopupWithJquery() {
           close: function() {}
         }
       })
+
+        })
       })
       
   

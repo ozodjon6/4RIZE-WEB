@@ -145,6 +145,27 @@ button::-moz-focus-inner {
 .mfp-close:active {
   top: 1px;
 }
+
 .mfp-close-btn-in .mfp-close {
-  color: #333;
-}
+    position: absolute;
+    background-image: url(../assets/icons/close.svg);
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 32px;
+    height: 32px;
+    right: 8px;
+    color: #242A38;
+    opacity: 1;
+    border: 1px solid #D3D6DB;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 8px;
+    font-weight: 400;
+    font-size: 0;
+    transition: background-image .3s;
+
+    &:hover {
+      background-image: url(../assets/icons/close-hover.svg);
+    }
+  }
