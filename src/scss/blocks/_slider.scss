@@ -9,7 +9,7 @@
   height: 202px;
 
   .swiper-slide {
-    transition: box-shadow transform .3s;
+    transition: box-shadow, transform .3s;
     .swiper-slide__gallery {
       display: block;
       height: 100%;

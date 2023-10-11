@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", () => {
-
     function createClassMenuCard() {
         // Class
 
@@ -19,7 +18,6 @@ window.addEventListener("DOMContentLoaded", () => {
                 elemet.className = "grid__item locked";
 
                 if (elemet) {
-
                     elemet.innerHTML = `
 
                 <a href="" class="image-wrap">
@@ -62,7 +60,6 @@ window.addEventListener("DOMContentLoaded", () => {
                     <span class="text-default text-x-small">${this.rating}</span>
                 </div>
             `;
-
                 }
 
                 if (this.parent) {
@@ -273,7 +270,7 @@ window.addEventListener("DOMContentLoaded", () => {
             if (overlay && sidebar) {
                 overlay.addEventListener("click", () => {
                     sidebar.classList.remove("open");
-                    overlay.style.zIndex = '100'
+                    overlay.style.zIndex = "100";
                     overlayClose();
 
                     document.body.style.overflowX = "";
@@ -293,62 +290,22 @@ window.addEventListener("DOMContentLoaded", () => {
                 firstElement.classList.remove("locked");
                 firstElement.classList.add("unlocked");
             }
-
         } catch (e) {
             console.log(e);
         }
-    }
-
-    function sliderElement() {
-        const swiperSlide = document.querySelector('.slider__content .swiper');
-
-        if (swiperSlide) {
-
-            const swiper = new Swiper('.swiper', {
-                loop: false,
-                slidesPerView: "7",
-                spaceBetween: 12,
-
-                // Navigation arrows
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-
-                // Breakpoint for adaptive
-                breakpoints: {
-                    0: {
-                        slidesPerView: 2.8,
-                        spaceBetween: 12,
-                    },
-                    321: {
-                        slidesPerView: 3.5,
-                    },
-                    768: {
-                        slidesPerView: 6,
-                    },
-                    992: {
-                        slidesPerView: 6.6,
-                    },
-                },
-            });
-
-        }
-
     }
 
     function popupControl() {
         const popupCloseBtn = document.querySelectorAll(".popup-wrap__close-btn");
         const popupWrap = document.querySelector(".popup-wrap");
         const filterItemCheckbox = document.querySelectorAll(".filter__item");
-        const overlay = document.querySelector(".overlay")
+        const overlay = document.querySelector(".overlay");
         const sidebar = document.querySelector(".sidebar");
         const gridItemImgLink = document.querySelectorAll(".image-wrap");
         const changeTextButtons = document.querySelectorAll(".filter__more");
         const insidePageClickBtn = document.querySelectorAll(".info-list__link");
 
         for (let i = 0; i < filterItemCheckbox.length; i++) {
-
             filterItemCheckbox[i].addEventListener("click", (event) => {
                 event.preventDefault();
                 if (!event.target.classList.contains("unlocked")) {
@@ -363,12 +320,12 @@ window.addEventListener("DOMContentLoaded", () => {
                     }
                 }
 
-                if (window.matchMedia('(max-width: 991px)').matches) {
-                    overlay.style.zIndex = '1000'
+                if (window.matchMedia("(max-width: 991px)").matches) {
+                    overlay.style.zIndex = "1000";
                 } else {
-                    overlay.style.zIndex = '100'
+                    overlay.style.zIndex = "100";
                 }
-            })
+            });
         }
 
         for (let i = 0; i < gridItemImgLink.length; i++) {
@@ -380,14 +337,14 @@ window.addEventListener("DOMContentLoaded", () => {
                     document.body.style.overflowX = "hidden";
                     document.body.style.position = "fixed";
                 } else {
-                    gridItemImgLink[i].href = './inside-page.html'
+                    gridItemImgLink[i].href = "./inside-page.html";
 
                     const link = gridItemImgLink[i].getAttribute("href");
                     window.location.href = link;
                     document.body.style.overflowX = "";
                     document.body.style.position = "";
                 }
-            })
+            });
         }
 
         for (let i = 0; i < changeTextButtons.length; i++) {
@@ -397,13 +354,13 @@ window.addEventListener("DOMContentLoaded", () => {
                     overlayOpen();
                     document.body.style.overflowX = "hidden";
                     document.body.style.position = "fixed";
-                    overlay.style.zIndex = '1000'
+                    overlay.style.zIndex = "1000";
                 } else {
                     document.body.style.overflowX = "";
                     document.body.style.position = "";
-                    overlay.style.zIndex = ''
+                    overlay.style.zIndex = "";
                 }
-            })
+            });
         }
 
         for (let i = 0; i < insidePageClickBtn.length; i++) {
@@ -418,7 +375,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     document.body.style.overflowX = "";
                     document.body.style.position = "";
                 }
-            })
+            });
         }
 
         if (popupCloseBtn) {
@@ -429,62 +386,28 @@ window.addEventListener("DOMContentLoaded", () => {
                         document.body.style.overflowX = "";
                         document.body.style.position = "";
                     }
-                    overlay.style.zIndex = '100'
+                    overlay.style.zIndex = "100";
                     overlayClose();
 
                     if (sidebar && sidebar.classList.contains("open")) {
                         overlayOpen();
                     }
-
-                })
+                });
             }
         }
-
     }
 
-
-    // function magnificPopup() {
-    //   const gallery = document.querySelector(".gallery");
-    //   if (gallery) {
-    //     $('.gallery').magnificPopup({
-    //       delegate: 'a',
-    //       type: 'image',
-    //       mainClass: 'gallery-slider',
-    //       gallery: {
-    //         enabled: true,
-    //         navigateByImgClick: true,
-    //       },
-    //       image: {
-    //         titleSrc: function(item) {
-
-    //           var $gallery = $('.gallery');
-    //           var $result = '';
-    //           if ($gallery.find('li').length>0) {
-    //             for (var i=0; i<$gallery.find('li').length; i++) {
-    //               var $cl_active = '';
-    //               if (item.index == i) $cl_active = ' class="active"'; 
-    //               else $cl_active = '';
-    //               var $thumb = $gallery.find('li:eq('+i+')').find('img').attr('src');
-    //               $result += '<li onclick="javascript:$(\'.gallery\').magnificPopup(\'goTo\', '+i+');return false;"'+$cl_active+'>' +
-    //                   '<img src="' + $thumb + '" alt="">'
-    //                 '</li>';
-    //             }
-    //           }
-    //           return $result;
-    //         }
-    //       }
-    //     });
-    //   }
-    // }
-
-
     function changeTextAndIcon() {
-        const btnChangeLanguage = document.querySelector('.header__button-lang');
-        const languageFlag = document.getElementById('languageFlag');
-        const languageText = document.getElementById('languageText');
+        const btnChangeLanguage = document.querySelector(".header__button-lang");
+        const languageFlag = document.getElementById("languageFlag");
+        const languageText = document.getElementById("languageText");
 
-        const texts = ['Eng', 'Rus', 'Uzb'];
-        const icons = ['./assets/icons/flag.svg', './assets/icons/flag-ru.svg', './assets/icons/flag-uz.svg', ]
+        const texts = ["Eng", "Rus", "Uzb"];
+        const icons = [
+            "./assets/icons/flag.svg",
+            "./assets/icons/flag-ru.svg",
+            "./assets/icons/flag-uz.svg",
+        ];
 
         let currentIndex = 0;
 
@@ -499,157 +422,186 @@ window.addEventListener("DOMContentLoaded", () => {
             languageText.textContent = texts[currentIndex];
         }
 
-        btnChangeLanguage.addEventListener('click', (e) => {
+        btnChangeLanguage.addEventListener("click", (e) => {
             e.preventDefault();
             changeLanguage();
         });
     }
 
     function toggleInput() {
-        const passwordInput = document.querySelectorAll('.registration-wrap__input');
-        const toggleButton = document.querySelectorAll('.icon-right');
-        const hideOrIcon = document.querySelectorAll('.hide-icon use');
-        const helperText = document.querySelectorAll('.helper-text__text');
+        const passwordInput = document.querySelectorAll(
+            ".registration-wrap__input"
+        );
+        const toggleButton = document.querySelectorAll(".icon-right");
+        const hideOrIcon = document.querySelectorAll(".hide-icon use");
+        const helperText = document.querySelectorAll(".helper-text__text");
 
         let isPasswordVisible = false;
 
         for (let i = 0; i < toggleButton.length; i++) {
-            toggleButton[i].addEventListener('click', () => {
+            toggleButton[i].addEventListener("click", () => {
                 isPasswordVisible = !isPasswordVisible;
-                passwordInput[i].type = isPasswordVisible ? 'text' : 'password';
+                passwordInput[i].type = isPasswordVisible ? "text" : "password";
                 if (isPasswordVisible) {
-                    hideOrIcon[i].setAttribute('xlink:href', './assets/icons/sprite.svg#show-icon');
+                    hideOrIcon[i].setAttribute(
+                        "xlink:href",
+                        "./assets/icons/sprite.svg#show-icon"
+                    );
                 } else {
-                    hideOrIcon[i].setAttribute('xlink:href', './assets/icons/sprite.svg#hide-icon');
+                    hideOrIcon[i].setAttribute(
+                        "xlink:href",
+                        "./assets/icons/sprite.svg#hide-icon"
+                    );
                 }
             });
         }
 
         helperText.forEach(function(item) {
             if (item.textContent.length > 20) {
-                item.classList.add('error')
+                item.classList.add("error");
             } else {
-                item.classList.remove('error')
+                item.classList.remove("error");
             }
-        })
+        });
     }
 
     function customSelect() {
-        const customSelect = document.getElementById('customSelect');
-        const customOptions = document.getElementById('customOptions');
-        const select = document.getElementById('mySelect');
+        const customSelect = document.getElementById("customSelect");
+        const customOptions = document.getElementById("customOptions");
+        const select = document.getElementById("mySelect");
 
         // Открытие и закрытие выпадающего списка
         if (customSelect) {
-            customSelect.addEventListener('click', function() {
-                customOptions.style.display = customOptions.style.display === 'block' ? 'none' : 'block';
+            customSelect.addEventListener("click", function() {
+                customOptions.style.display =
+                    customOptions.style.display === "block" ? "none" : "block";
             });
         }
 
         // Обработка выбора опции
         if (customOptions) {
-            customOptions.addEventListener('click', function(e) {
-                if (e.target.tagName === 'LI') {
-                    const selectedValue = e.target.getAttribute('data-value');
+            customOptions.addEventListener("click", function(e) {
+                if (e.target.tagName === "LI") {
+                    const selectedValue = e.target.getAttribute("data-value");
                     select.value = selectedValue;
                     customSelect.innerText = e.target.innerText;
-                    customOptions.style.display = 'none';
+                    customOptions.style.display = "none";
                 }
             });
         }
 
         if (customSelect && customOptions) {
             // Закрытие выпадающего списка при клике вне его области
-            document.addEventListener('click', function(e) {
+            document.addEventListener("click", function(e) {
                 if (!customSelect.contains(e.target)) {
-                    customOptions.style.display = 'none';
+                    customOptions.style.display = "none";
                 }
             });
         }
     }
 
-    function magnificPopupWithJquery() {
-        if (typeof jQuery !== 'undefined') {
+    function magnificPopupSliderWithJquery() {
+        if (typeof jQuery !== "undefined") {
             $(document).ready(function() {
+                const swiper = new Swiper(".main-slider", {
+                    loop: false,
+                    slidesPerView: "7",
+                    spaceBetween: 12,
 
-                $(".slider__content .swiper-slide").each(function(i, v) {
-                    $(this).on("click", function() {
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
 
-                        let photoIndex = i;
-                        let $this = $(this);
+                    // Breakpoint for adaptive
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 2.8,
+                            spaceBetween: 12,
+                        },
+                        321: {
+                            slidesPerView: 3.5,
+                        },
+                        768: {
+                            slidesPerView: 6,
+                        },
+                        992: {
+                            slidesPerView: 6.6,
+                        },
+                    },
+                });
 
+                $(".slider__content .swiper-slide").on("click", function() {
+                    let photoIndex = 0;
+                    let $this = $(this);
 
-                        $(".gallery-top .swiper-slide").each(function(i, v) {
-                            const thisSi = $this.data("startindex");
-                            const topSi = $(v).data("startindex");
-                            if (thisSi === topSi) {
-                                photoIndex = i;
-                            }
-                        });
+                    $(".gallery-top .swiper-slide").each(function(i, v) {
+                        const thisSi = $this.data("startindex");
+                        const topSi = $(v).data("startindex");
 
-                        $.magnificPopup.open({
-                            items: {
-                                src: "#ip-gallery", // can be a HTML string, jQuery object, or CSS selector
-                                type: "inline"
+                        if (thisSi === topSi) {
+                            photoIndex += i;
+                        }
+                    });
+                    $.magnificPopup.open({
+                        items: {
+                            src: "#ip-gallery",
+                            type: "inline",
+                        },
+                        closeBtnInside: true,
+                        removalDelay: 300,
+                        callbacks: {
+                            beforeOpen: function() {},
+                            open: function() {
+                                $(document.body).css({
+                                    overflowX: "hidden",
+                                    position: "fixed",
+                                });
+
+                                $(".gallery-container").addClass("active");
+
+                                const galleryThumbs = new Swiper(".gallery-thumbs", {
+                                    spaceBetween: 12,
+                                    slidesPerView: "auto",
+                                    centeredSlides: true,
+                                    slideToClickedSlide: true,
+                                    loop: false,
+                                });
+                                const galleryTop = new Swiper(".gallery-top", {
+                                    spaceBetween: 12,
+                                    loop: false,
+                                    freeMode: false,
+                                    initialSlide: photoIndex,
+                                    navigation: {
+                                        prevEl: ".swiper-button-prev",
+                                        nextEl: ".swiper-button-next",
+                                    },
+                                    thumbs: {
+                                        swiper: galleryThumbs,
+                                    },
+                                });
                             },
-                            closeBtnInside: true,
-                            removalDelay: 300,
-                            // mainClass: "mfp-zoom-in",
-                            callbacks: {
-                                beforeOpen: function() {},
-                                open: function() {
-
-                                    $(".gallery-container").addClass("active");
-
-                                    var galleryThumbs = new Swiper(".gallery-thumbs", {
-                                        spaceBetween: 12,
-                                        slidesPerView: "4",
-                                        centeredSlides: true,
-                                        slideToClickedSlide: true,
-                                        loop: false,
-                                    });
-
-                                    var galleryTop = new Swiper(".gallery-top", {
-                                        spaceBetween: 12,
-                                        loop: false,
-                                        freeMode: false,
-                                        initialSlide: photoIndex,
-                                        navigation: {
-                                            prevEl: ".swiper-button-prev",
-                                            nextEl: ".swiper-button-next"
-                                        },
-                                        thumbs: {
-                                            swiper: galleryThumbs
-                                        }
-                                    });
-
-                                    // galleryTop.controller.control = galleryThumbs;
-                                    // galleryThumbs.controller.control = galleryTop;
-                                },
-                                close: function() {}
-                            }
-                        })
-
-                    })
-                })
-
-
+                            close: function() {
+                                $(document.body).css({
+                                    overflowX: "",
+                                    position: ""
+                                });
+                            },
+                        },
+                    });
+                });
             });
         } else {
             console.log("jQuery is not available on this page.");
         }
     }
 
-
-
     createClassMenuCard();
     // clickFilterMore();
     domElemet();
-    sliderElement();
     popupControl();
-    // magnificPopup();
     changeTextAndIcon();
     toggleInput();
     customSelect();
-    magnificPopupWithJquery();
+    magnificPopupSliderWithJquery();
 });
