@@ -104,7 +104,7 @@
 }
 
 .grid__item-descr {
-  color: var(--link-secondary-colour);
+  color: var(--text-primary-colour);
   transition: all .3s;
 
   &:hover {
@@ -123,10 +123,6 @@
 }
 
 .product__item {
-
-  .grid__item-descr {
-    color: var(--link-secondary-colour);
-  }
 
   .grid__item-rating {
     svg {

@@ -371,9 +371,13 @@ window.addEventListener("DOMContentLoaded", () => {
         if (popupWrap.classList.contains("active")) {
           document.body.style.overflowX = "hidden";
           document.body.style.position = "fixed";
+          document.body.style.right = "0";
+          document.body.style.left = "0";
         } else {
           document.body.style.overflowX = "";
           document.body.style.position = "";
+          document.body.style.right = "";
+          document.body.style.left = "";
         }
       });
     }
