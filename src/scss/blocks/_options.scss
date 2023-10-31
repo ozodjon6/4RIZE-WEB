@@ -13,6 +13,7 @@
 
     @include respond(mobilemini) {
       flex-direction: column;
+      margin-bottom: 12px;
     }
 }
 
@@ -28,11 +29,12 @@
 
         @include respond(tabdesk) {
           margin-right: 20px;
-          margin-bottom: 20px;
+          margin-bottom: 55px;
         }
 
         @include respond(mobilemini) {
           margin-right: 0;
+          margin-bottom: 20px;
         }
     }
 
@@ -42,7 +44,11 @@
         border-radius: 8px;
 
         &:first-child {
-            margin-bottom: 24px;
+            margin-bottom: 32px;
+
+            @include respond(mobilemini) {
+                margin-bottom: 20px;
+            }
         }
     }
 }
