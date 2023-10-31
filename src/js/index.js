@@ -336,6 +336,8 @@ window.addEventListener("DOMContentLoaded", () => {
           overlayOpen();
           document.body.style.overflowX = "hidden";
           document.body.style.position = "fixed";
+          document.body.style.right = "0";
+          document.body.style.left = "0";
         } else {
           gridItemImgLink[i].href = "./inside-page.html";
 
@@ -343,6 +345,8 @@ window.addEventListener("DOMContentLoaded", () => {
           window.location.href = link;
           document.body.style.overflowX = "";
           document.body.style.position = "";
+          document.body.style.right = "";
+          document.body.style.left = "";
         }
       });
     }
@@ -426,10 +430,12 @@ window.addEventListener("DOMContentLoaded", () => {
       languageText.textContent = texts[currentIndex];
     }
 
-    btnChangeLanguage.addEventListener("click", (e) => {
-      e.preventDefault();
-      changeLanguage();
-    });
+    if(btnChangeLanguage) {
+      btnChangeLanguage.addEventListener("click", (e) => {
+        e.preventDefault();
+        changeLanguage();
+      });
+    }
   }
 
   function toggleInput() {
@@ -549,7 +555,7 @@ window.addEventListener("DOMContentLoaded", () => {
           });
           $.magnificPopup.open({
             items: {
-              src: "#ip-gallery",
+              src: ".gallery-top",
               type: "inline",
             },
             closeBtnInside: true,
@@ -560,17 +566,12 @@ window.addEventListener("DOMContentLoaded", () => {
                 $(document.body).css({
                   overflowX: "hidden",
                   position: "fixed",
+                  right: "0",
+                  left: "0"
                 });
 
-                $(".gallery-container").addClass("active");
+                $(".gallery-top").addClass("active");
 
-                const galleryThumbs = new Swiper(".gallery-thumbs", {
-                  spaceBetween: 12,
-                  slidesPerView: "auto",
-                  centeredSlides: true,
-                  slideToClickedSlide: true,
-                  loop: false,
-                });
                 const galleryTop = new Swiper(".gallery-top", {
                   spaceBetween: 12,
                   loop: false,
@@ -580,8 +581,9 @@ window.addEventListener("DOMContentLoaded", () => {
                     prevEl: ".swiper-button-prev",
                     nextEl: ".swiper-button-next",
                   },
-                  thumbs: {
-                    swiper: galleryThumbs,
+                  pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
                   },
                 });
               },

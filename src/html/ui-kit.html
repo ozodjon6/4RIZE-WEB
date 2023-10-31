@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI kit</title>
+    <link rel="stylesheet" href="./css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+
+    <div class="UI-wrapper">
+        <h1 class="title">Компоненты и UI Элементы </h1>
+
+        <div class="popup-wrap">
+            <div class="popup-wrap__close-btn">
+                <svg class="icon" width="12" height="12">
+                    <use xlink:href="./assets/icons/sprite.svg#close"></use>
+                </svg>
+            </div>
+            <div class="popup-wrap__inner">
+                <form class="registration-wrap">
+                    <h3 class="title">Регистрация</h3>
+                    <div class="registration-wrap__content">
+                        <div class="registration-wrap__field">
+                            <svg class="icon home-icon" width="16" height="16">
+                                <use xlink:href="./assets/icons/sprite.svg#home-icon"></use>
+                            </svg>
+                            <div class="registration-wrap__item">
+                                <input id="fullname" type="text" autocomplete="off" class="registration-wrap__input" required>
+                                <label for="fullname" class="registration-wrap__item-label">Ваше имя и фамилия</label>
+                            </div>
+                            <div class="icon-right">
+                                <svg class="icon hide-icon" width="16" height="16">
+                                    <use xlink:href="./assets/icons/sprite.svg#hide-icon"></use>
+                                </svg>
+                            </div>
+                            <div class="helper-text d-flex a-center justify-content-between">
+                                <span class="helper-text__text">Helper normal</span>
+                                <p>0/20</p>
+                            </div>
+                            <span class="registration-wrap__error">Error text</span>
+                        </div>
+                        <div class="registration-wrap__field">
+                            <svg class="icon home-icon" width="16" height="16">
+                                <use xlink:href="./assets/icons/sprite.svg#home-icon"></use>
+                            </svg>
+                            <div class="registration-wrap__item">
+                                <input id="company" type="text" autocomplete="off" class="registration-wrap__input" required>
+                                <label for="company" class="registration-wrap__item-label">Компания</label>
+                            </div>
+                            <div class="icon-right">
+                                <svg class="icon hide-icon" width="16" height="16">
+                                    <use xlink:href="./assets/icons/sprite.svg#hide-icon"></use>
+                                </svg>
+                            </div>
+                            <div class="helper-text d-flex a-center justify-content-between">
+                                <span class="helper-text__text">Helper normal</span>
+                                <p>0/20</p>
+                            </div>
+                            <span class="registration-wrap__error">Error text</span>
+                        </div>
+                        <div class="registration-wrap__field">
+                            <svg class="icon home-icon" width="16" height="16">
+                                <use xlink:href="./assets/icons/sprite.svg#home-icon"></use>
+                            </svg>
+                            <div class="registration-wrap__item">
+                                <input id="jobTitle" type="text" autocomplete="off" class="registration-wrap__input" required>
+                                <label for="jobTitle" class="registration-wrap__item-label">Должность</label>
+                            </div>
+                            <div class="icon-right">
+                                <svg class="icon hide-icon" width="16" height="16">
+                                    <use xlink:href="./assets/icons/sprite.svg#hide-icon"></use>
+                                </svg>
+                            </div>
+                            <div class="helper-text d-flex a-center justify-content-between">
+                                <span class="helper-text__text">Helper normal</span>
+                                <p>0/20</p>
+                            </div>
+                            <span class="registration-wrap__error">Error text</span>
+                        </div>
+                        <div class="registration-wrap__field">
+                            <svg class="icon home-icon" width="16" height="16">
+                                <use xlink:href="./assets/icons/sprite.svg#home-icon"></use>
+                            </svg>
+                            <div class="registration-wrap__item">
+                                <input id="email" type="E-mail" autocomplete="off" class="registration-wrap__input" required>
+                                <label for="email" class="registration-wrap__item-label">E-mail</label>
+                            </div>
+                            <div class="icon-right">
+                                <svg class="icon hide-icon" width="16" height="16">
+                                    <use xlink:href="./assets/icons/sprite.svg#hide-icon"></use>
+                                </svg>
+                            </div>
+                            <div class="helper-text d-flex a-center justify-content-between">
+                                <span class="helper-text__text">Helper normal</span>
+                                <p>0/20</p>
+                            </div>
+                            <span class="registration-wrap__error">Error text</span>
+                        </div>
+                        <div class="registration-wrap__field">
+                            <svg class="icon home-icon" width="16" height="16">
+                                <use xlink:href="./assets/icons/sprite.svg#home-icon"></use>
+                            </svg>
+                            <div class="registration-wrap__item">
+                                <input id="contact" type="number" autocomplete="off" class="registration-wrap__input" required>
+                                <label for="contact" class="registration-wrap__item-label">Telegram или WhatsApp номер</label>
+                            </div>
+                            <div class="icon-right">
+                                <svg class="icon hide-icon" width="16" height="16">
+                                    <use xlink:href="./assets/icons/sprite.svg#hide-icon"></use>
+                                </svg>
+                            </div>
+                            <span class="registration-wrap__field-text">Мы отправим доступ на сервис в указанный телеграм номер</span>
+                            <span class="registration-wrap__error">Error text</span>
+                        </div>
+                        <label class="registration-wrap__field registration-wrap__label d-flex a-center">
+                            <input type="checkbox" class="registration-wrap__checkbox">
+                            <span class="registration-wrap__mask"></span>
+                            <span class="registration-wrap__text">Согласень с условиями обработки данных</span>
+                        </label>
+                        <button class="btn x-large mx-auto d-block">Получить доступ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
