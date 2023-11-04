@@ -77,16 +77,6 @@
 .gallery-top {
   position: relative;
 
-  .swiper-wrapper {
-    height: max-content;
-    max-height: max-content;
-    margin-top: 32px;
-
-    .swiper-slide {
-      height: 100%;
-    }
-  }
-
   .swiper-button-next {
     transform: rotate(180deg);
     right: -8px;
@@ -124,6 +114,40 @@
       width: 12px;
       height: 12px;
       color: var(--icons-primary-colour);
+    }
+  }
+}
+
+.gallery-top {
+  position: relative;
+
+  .swiper-wrapper {
+    height: 100%;
+    // max-height: 444px;
+    margin-top: 32px;
+
+    @include respond(mobilemini) {
+      margin-top: 24px;
+    }
+
+    .swiper-slide {
+      height: 100%;
+      max-height: 444px;
+
+      @include respond(tabdesk) {
+        max-height: 720px;
+      }
+
+      @include respond(mobilemini) {
+        max-height: 85%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      @media (max-width: 425px) {
+        max-height: 60%;
+      }
     }
   }
 }
@@ -175,7 +199,9 @@
   margin-left: 4rem;
 
   @include respond(mobilemini) {
-    padding: 16px;
+    padding: 16px 16px 24px;
+    margin-right: 0;
+    margin-left: 0;
   }
 
   .gallery-top__heading {
@@ -186,10 +212,12 @@
     @include respond(mobilemini) {
       flex-direction: column;
       margin-top: 0;
-      margin-right: 48px;
+      margin-right: 0;
       
       .title {
         text-align: left;
+        margin-right: 34px;
+        margin-bottom: 8px;
       }
     }
   }
@@ -200,7 +228,11 @@
   }
 
   .swiper-pagination {
-    bottom: 20%;
+    bottom: 15%;
+
+    @include respond(mobilemini) {
+      bottom: 12%;
+    }
 
     .swiper-pagination-bullet {
       color: var(--pagination-color-circle);
@@ -229,6 +261,14 @@
     margin: 0 auto;
     border-radius: 4px;
     border-color: var(--border-color-border-quaternary, #BDC1C9);
+
+    @include respond(mobilemini) {
+      bottom: 24px;
+    }
+
+    @media (max-width: 425px) {
+      margin-bottom: -14px;
+    }
   }
   strong {
     color: var(--text-color-text-primary);
@@ -240,4 +280,19 @@
       font-size: 12px;
     }
   }
+
+  &:hover {
+    color: var(--text-color-text-primary-hover);
+    cursor: pointer;
+  }
 }
+
+// @media (min-width: 1920px) {
+//   .slider__content,
+//   .gallery-top {
+
+//     .swiper-wrapper {
+//       max-height: 720px;
+//     }
+//   }
+// }
