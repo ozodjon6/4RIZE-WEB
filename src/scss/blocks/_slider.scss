@@ -1,3 +1,5 @@
+/** @format */
+
 .swiper {
   // width: 100%;
   @media (min-width: 768px) {
@@ -132,7 +134,7 @@
 
     .swiper-slide {
       height: 100%;
-      max-height: 444px;
+      max-height: 75%;
 
       @include respond(tabdesk) {
         max-height: 720px;
@@ -141,7 +143,7 @@
       @include respond(mobilemini) {
         max-height: 85%;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
       }
 
@@ -193,7 +195,7 @@
   transition: all 0.2s ease-in-out;
   background: var(--bg-secondary-colour);
   border-radius: 8px;
-  padding: 2rem;
+  padding: 32px;
   height: 100%;
   margin-right: 4rem;
   margin-left: 4rem;
@@ -207,13 +209,13 @@
   .gallery-top__heading {
     justify-content: space-between;
     max-width: 120rem;
-    margin: 12px auto 0;
+    margin: 0 auto;
 
     @include respond(mobilemini) {
       flex-direction: column;
       margin-top: 0;
       margin-right: 0;
-      
+
       .title {
         text-align: left;
         margin-right: 34px;
@@ -260,7 +262,7 @@
     max-width: 243px;
     margin: 0 auto;
     border-radius: 4px;
-    border-color: var(--border-color-border-quaternary, #BDC1C9);
+    border-color: var(--border-color-border-quaternary, #bdc1c9);
 
     @include respond(mobilemini) {
       bottom: 24px;
