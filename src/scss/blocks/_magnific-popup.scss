@@ -113,6 +113,11 @@
   transition: opacity 0.3s;
   z-index: 100;
 
+  @include respond(tabdesk) {
+    top: 32px;
+    right: 32px;
+  }
+
   @include respond(mobilemini) {
     top: 16px;
     right: 16px;

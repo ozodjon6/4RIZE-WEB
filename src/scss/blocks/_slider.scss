@@ -124,7 +124,7 @@
 
 .slider__content-gallery {
   .swiper-wrapper {
-    height: 100%;
+    height: max-content;
 
     @include respond(mobilemini) {
       margin-top: 24px;
@@ -172,6 +172,7 @@
     background-color: #fff;
     border: 1px solid var(--border-slider-color);
     top: 50%;
+    z-index: 999;
 
     @include respond(mobilemini) {
       width: 40px;
@@ -231,6 +232,7 @@
     padding: 16px 16px 24px;
     margin-right: 0;
     margin-left: 0;
+    border-radius: 0;
   }
 
   .gallery-top__heading {
@@ -238,7 +240,7 @@
     max-width: 120rem;
     margin: 0 auto 32px;
 
-    @include respond(mobilemini) {
+    @include respond(tabdesk) {
       flex-direction: column;
       margin-top: 0;
       margin-right: 0;
@@ -254,6 +256,7 @@
   .gallery-top {
     margin: 0 auto;
     position: absolute;
+    height: max-content;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -265,12 +268,17 @@
   }
 
   .swiper-pagination {
-    bottom: 0;
+    bottom: 20%;
+
+    @include respond(mobilemini) {
+      position: absolute;
+      bottom: 10%;
+    }
     .swiper-pagination-bullet {
       color: var(--pagination-color-circle);
 
       &.swiper-pagination-bullet-active {
-        color: var(--brand-primary-colour);
+        background-color: var(--brand-primary-colour);
       }
     }
   }
@@ -296,6 +304,7 @@
 
     @include respond(mobilemini) {
       bottom: 24px;
+      max-width: 204px;
     }
 
     @media (max-width: 425px) {
@@ -314,16 +323,39 @@
   }
 
   &:hover {
-    color: var(--text-color-text-primary-hover);
+    opacity: 0.8;
     cursor: pointer;
   }
 }
 
 @media (min-width: 1920px) {
   .slider__content-gallery {
+    .content-gallery {
+      max-width: 120rem;
+      max-height: 72rem;
+      height: max-content;
+      margin: 0 auto;
+    }
     .gallery-top {
       max-width: 120rem;
       max-height: 72rem;
+      height: max-content;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .slider__content-gallery {
+    .content-gallery {
+      max-width: 450px;
+      max-height: max-content;
+      margin: 0 auto;
+    }
+    .gallery-top {
+      max-width: 450px;
+      max-height: max-content;
+      height: max-content;
       margin: 0 auto;
     }
   }
@@ -331,9 +363,15 @@
 
 @media (max-width: 1919px) {
   .slider__content-gallery {
+    .content-gallery {
+      max-width: 1014px;
+      max-height: max-content;
+      margin: 0 auto;
+    }
     .gallery-top {
       max-width: 1014px;
-      max-height: 440px;
+      max-height: max-content;
+      height: max-content;
       margin: 0 auto;
     }
   }
