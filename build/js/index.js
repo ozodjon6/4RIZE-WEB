@@ -1,3 +1,5 @@
+/** @format */
+
 window.addEventListener("DOMContentLoaded", () => {
     function createClassMenuCard() {
         // Class
@@ -555,7 +557,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     });
                     $.magnificPopup.open({
                         items: {
-                            src: ".gallery-top",
+                            src: ".slider__content-gallery",
                             type: "inline",
                         },
                         closeBtnInside: true,
@@ -567,16 +569,19 @@ window.addEventListener("DOMContentLoaded", () => {
                                     overflowX: "hidden",
                                     position: "fixed",
                                     right: "0",
-                                    left: "0"
+                                    left: "0",
                                 });
 
-                                $(".gallery-top").addClass("active");
+                                $(".slider__content-gallery").addClass("active");
 
                                 const galleryTop = new Swiper(".gallery-top", {
                                     spaceBetween: 12,
                                     loop: false,
                                     freeMode: false,
                                     initialSlide: photoIndex,
+                                    keyboard: {
+                                        enabled: true,
+                                    },
                                     navigation: {
                                         prevEl: ".swiper-button-prev",
                                         nextEl: ".swiper-button-next",
@@ -586,6 +591,41 @@ window.addEventListener("DOMContentLoaded", () => {
                                         clickable: true,
                                     },
                                 });
+
+                                downloadButton.addEventListener("click", function() {
+                                    downloadCurrentImage();
+                                });
+
+                                downloadAllButton.addEventListener("click", function() {
+                                    downloadAllImages();
+                                });
+
+                                function downloadCurrentImage() {
+                                    // Get the active slide
+                                    var activeSlide = galleryTop.slides[galleryTop.activeIndex];
+                                    var imageElement = activeSlide.querySelector("img");
+
+                                    // Create a temporary link and set attributes for image download
+                                    var downloadLink = document.createElement("a");
+                                    downloadLink.href = imageElement.src;
+                                    downloadLink.download =
+                                        "image" + (galleryTop.activeIndex + 1) + ".jpg";
+                                    downloadLink.target = "_blank";
+
+                                    // Add the link to the document and simulate a click for download
+                                    document.body.appendChild(downloadLink);
+                                    downloadLink.click();
+
+                                    // Remove the temporary link from the document
+                                    document.body.removeChild(downloadLink);
+                                }
+
+                                function downloadAllImages() {
+                                    for (var i = 0; i < galleryTop.slides.length; i++) {
+                                        galleryTop.slideTo(i); // Move to each slide
+                                        downloadCurrentImage(); // Download the current image
+                                    }
+                                }
                             },
                             close: function() {
                                 $(document.body).css({
