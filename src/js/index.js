@@ -304,6 +304,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const overlay = document.querySelector(".overlay");
     const sidebar = document.querySelector(".sidebar");
     const gridItemImgLink = document.querySelectorAll(".image-wrap");
+    const productItem = document.querySelectorAll(".product__item");
     const changeTextButtons = document.querySelectorAll(".filter__more");
     const insidePageClickBtn = document.querySelectorAll(".info-list__link");
 
