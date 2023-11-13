@@ -135,6 +135,7 @@
 
       @include respond(tabdesk) {
         max-height: 720px;
+        min-height: 380px;
       }
 
       @include respond(mobilemini) {
@@ -171,12 +172,21 @@
     border-radius: 50%;
     background-color: #fff;
     border: 1px solid var(--border-slider-color);
-    top: 45%;
+    top: 48%;
     z-index: 999;
+
+    @include respond(tabdesk) {
+      top: 45%;
+    }
 
     @include respond(mobilemini) {
       width: 40px;
       height: 40px;
+      top: 48%;
+    }
+
+    @media (max-width: 425px) {
+      top: 50%;
     }
 
     &:hover svg {
@@ -268,7 +278,7 @@
   }
 
   .swiper-pagination {
-    bottom: 20%;
+    bottom: 17%;
 
     @include respond(mobilemini) {
       position: absolute;
@@ -381,12 +391,12 @@
   .slider__content-gallery {
     .content-gallery {
       max-width: 100%;
-      max-height: max-content;
+      max-height: 434px;
       margin: 0 auto;
     }
     .gallery-top {
       max-width: 100%;
-      max-height: max-content;
+      max-height: 434px;
       height: max-content;
       margin: 0 auto;
     }
